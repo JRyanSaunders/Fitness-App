@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import WorkoutTimer from "../components/WorkoutTimer";
-
-export default function WorkoutScreen() {
+export default function StatsScreen() {
   return (
     <View style={styles.container}>
-      <WorkoutTimer />
+      <Text>Statistics Screen!</Text>
     </View>
   );
 }

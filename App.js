@@ -9,11 +9,14 @@ import { AppLoading } from "expo";
 import { AntDesign } from "@expo/vector-icons";
 import * as Font from "expo-font";
 
+import { Colors } from "./colors/Colors";
+
 import HomeScreen from "./screens/HomeScreen";
 import CalendarScreen from "./screens/CalendarScreen";
 import ExercisesScreen from "./screens/ExercisesScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import WorkoutScreen from "./screens/WorkoutScreen";
+import StatsScreen from "./screens/StatsScreen";
 
 const getFonts = () =>
   Font.loadAsync({
@@ -22,7 +25,7 @@ const getFonts = () =>
   });
 
 const Tab = createBottomTabNavigator();
-const MainStack = createStackNavigator();
+const NestedStack = createStackNavigator();
 
 function MyTabs() {
   return (
@@ -34,7 +37,7 @@ function MyTabs() {
     >
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={Nested}
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
@@ -78,18 +81,33 @@ function MyTabs() {
 
 const Nested = () => {
   return (
-    <NestedStack.Navigator
-      screenOptions={{ gestureEnabled: true, gestureDirection: "horizontal" }}
-    >
+    <NestedStack.Navigator>
       <NestedStack.Screen
-        options={{ title: "My Home Screen" }}
+        options={{ headerShown: false, title: "Back" }}
         name="HomeScreen"
         component={HomeScreen}
       />
       <NestedStack.Screen
-        options={{ title: "My Home Screen" }}
         name="WorkoutScreen"
         component={WorkoutScreen}
+        options={{
+          title: "Workout",
+          headerStyle: {
+            backgroundColor: Colors.primary,
+          },
+          headerTintColor: "#fff",
+        }}
+      />
+      <NestedStack.Screen
+        name="StatsScreen"
+        component={StatsScreen}
+        options={{
+          title: "Statistics",
+          headerStyle: {
+            backgroundColor: Colors.primary,
+          },
+          headerTintColor: "#fff",
+        }}
       />
     </NestedStack.Navigator>
   );

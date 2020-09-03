@@ -3,8 +3,7 @@ import { StyleSheet, Text, View, SafeAreaView, Button } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { AntDesign } from "@expo/vector-icons";
 
-import WorkoutScreen from "./WorkoutScreen";
-import WorkoutTimer from "../components/WorkoutTimer";
+import { Colors } from "../colors/Colors";
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -16,12 +15,15 @@ export default function HomeScreen({ navigation }) {
           style={styles.timerDefault}
           onPress={() => navigation.navigate("WorkoutScreen")}
         >
-          <Button title="START WORKOUT" color="#7B4FFF" />
+          <Button title="START WORKOUT" color={Colors.primary} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.statContainer}>
-          <AntDesign name="barschart" size={18} color="#7B4FFF" />
-          <Text style={{ color: "#7B4FFF" }}>Statistics</Text>
-          <AntDesign name="book" size={18} color="#7B4FFF" />
+        <TouchableOpacity
+          style={styles.statContainer}
+          onPress={() => navigation.navigate("StatsScreen")}
+        >
+          <AntDesign name="barschart" size={18} color={Colors.primary} />
+          <Text style={{ color: Colors.primary }}>Statistics</Text>
+          <AntDesign name="book" size={18} color={Colors.primary} />
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -37,7 +39,7 @@ const styles = StyleSheet.create({
   },
   title: {
     position: "absolute",
-    top: 15,
+    top: 20,
     left: 15,
     color: "grey",
     fontSize: 10,
@@ -47,10 +49,10 @@ const styles = StyleSheet.create({
     top: 80,
     fontFamily: "lato-regular",
     fontSize: 24,
-    color: "#7B4FFF",
+    color: Colors.primary,
   },
   callToAction: {
-    color: "#7B4FFF",
+    color: Colors.primary,
     fontSize: 24,
   },
   statContainer: {
