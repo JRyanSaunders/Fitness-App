@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { AppLoading } from "expo";
 
 import { AntDesign } from "@expo/vector-icons";
@@ -13,10 +14,11 @@ import { Colors } from "./colors/Colors";
 
 import HomeScreen from "./screens/HomeScreen";
 import CalendarScreen from "./screens/CalendarScreen";
-import ExercisesScreen from "./screens/ExercisesScreen";
+import ExercisesScreen_FR from "./screens/ExercisesScreen_FR";
 import SettingsScreen from "./screens/SettingsScreen";
 import WorkoutScreen from "./screens/WorkoutScreen";
 import StatsScreen from "./screens/StatsScreen";
+import ExercisesScreen_S from "./screens/ExercisesScreen_S";
 
 const getFonts = () =>
   Font.loadAsync({
@@ -57,7 +59,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Exercises"
-        component={ExercisesScreen}
+        component={MyTopTabs}
         options={{
           tabBarLabel: "Exercises",
           tabBarIcon: ({ color, size }) => (
@@ -112,6 +114,17 @@ const Nested = () => {
     </NestedStack.Navigator>
   );
 };
+
+const TopTab = createMaterialTopTabNavigator();
+
+function MyTopTabs() {
+  return (
+    <TopTab.Navigator>
+      <TopTab.Screen name="Foam Roller" component={ExercisesScreen_FR} />
+      <TopTab.Screen name="Stretches" component={ExercisesScreen_S} />
+    </TopTab.Navigator>
+  );
+}
 
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
