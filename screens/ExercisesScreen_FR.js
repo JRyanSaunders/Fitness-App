@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   exerciseImage: {
     width: "20%",
     height: 60,
-    borderRadius: 10,
+    borderRadius: 30,
     marginRight: 30,
   },
   detailSection: {

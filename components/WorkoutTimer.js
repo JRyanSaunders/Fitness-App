@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   StyleSheet,
   Text,
@@ -46,9 +46,11 @@ export default function WorkoutTimer() {
     <View style={styles.container}>
       <View style={styles.timerCont}>
         <CountdownCircleTimer
+          {...props}
           onComplete={() => {
+            countRef.current += 1;
             setCompletedTime(Date.now()); // new value every time it hits the onComplete
-            return [true, 1000];
+            return [true, 0];
           }}
           isPlaying
           duration={5}
@@ -66,6 +68,8 @@ export default function WorkoutTimer() {
     </View>
   );
 }
+
+// return <p>{countRef.current}</p>
 
 const styles = StyleSheet.create({
   container: {

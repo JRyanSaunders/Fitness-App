@@ -19,78 +19,117 @@ const DATA = [
     title: "Calves and Hamstrings: one",
     section: "Stretches",
     image: require("../assets/S1.png"),
+    modalTitle: "Calves and Hamstrings: one",
+    modalDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "2",
     title: "Adductors: one",
     section: "Stretches",
     image: require("../assets/S2.png"),
+    modalTitle: "Adductors: one",
+    modalDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "3",
     title: "Adductors: two",
     section: "Stretches",
     image: require("../assets/S3.png"),
+    modalTitle: "Adductors: two",
+    modalDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "4",
     title: "Hip Flexors",
     section: "Stretches",
     image: require("../assets/S4.png"),
+    modalTitle: "Hip Flexors",
+    modalDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "5",
     title: "Calves and Hamstrings: two",
     section: "Stretches",
     image: require("../assets/S5.png"),
+    modalTitle: "Calves and Hamstrings: two",
+    modalDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "6",
     title: "Quads",
     section: "Stretches",
     image: require("../assets/S6.png"),
+    modalTitle: "Quads",
+    modalDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "7",
     title: "Calves and Hamstrings: three",
     section: "Stretches",
     image: require("../assets/S7.png"),
+    modalTitle: "Calves and Hamstrings: three",
+    modalDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "8",
     title: "Glutes (Bum)",
     section: "Stretches",
     image: require("../assets/S8.png"),
+    modalTitle: "Glutes (Bum)",
+    modalDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "9",
     title: "Abs",
     section: "Stretches",
     image: require("../assets/S9.png"),
+    modalTitle: "Abs",
+    modalDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "10",
     title: "Lats (Sides)",
     section: "Stretches",
     image: require("../assets/S10.png"),
+    modalTitle: "Lats (Sides)",
+    modalDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "11",
     title: "Deltoid (Shoulder)",
     section: "Stretches",
     image: require("../assets/S11.png"),
+    modalTitle: "Deltoid (Shoulder)",
+    modalDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "12",
     title: "Triceps",
     section: "Stretches",
     image: require("../assets/S12.png"),
+    modalTitle: "Triceps",
+    modalDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "13",
     title: "Pecs (Chest)",
     section: "Stretches",
     image: require("../assets/S13.png"),
+    modalTitle: "Pecs (Chest)",
+    modalDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
 
@@ -119,6 +158,20 @@ export default function StretchesScreen() {
     <Item title={item.title} image={item.image} section={item.section} />
   );
 
+  const modalItem = ({ modalTitle, modalDesc }) => (
+    <View style={styles.modalItem}>
+      <Text style={styles.modalTitle}>{modalTitle}</Text>
+      <Text style={styles.modalDesc}>{modalDesc}</Text>
+    </View>
+  );
+
+  const renderModalItem = ({ modalItem }) => (
+    <modalItem
+      modalTitle={modalItem.modalTitle}
+      modalDesc={modalItem.modalDesc}
+    />
+  );
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.tabBackground}>
@@ -126,6 +179,7 @@ export default function StretchesScreen() {
       </View>
       <Modal
         animationType="slide"
+        renderItem={modalItem}
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
