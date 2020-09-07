@@ -135,18 +135,19 @@ const DATA = [
 
 export default function StretchesScreen() {
   const [modalVisible, setModalVisible] = useState(false);
+  const [currentItem, setCurrentItem] = useState({});
 
-  const Item = ({ title, image, section }) => (
+  const Item = ({ item }) => (
     <View style={styles.item}>
-      <Image source={image} style={styles.exerciseImage} />
+      <Image source={item.image} style={styles.exerciseImage} />
       <View style={styles.detailSection}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.section}>{section}</Text>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.section}>{item.section}</Text>
       </View>
       <TouchableOpacity
         style={styles.viewButton}
         onPress={() => {
-          setModalVisible(true);
+          openSettingsModal(item);
         }}
       >
         <Text style={styles.viewText}>View</Text>
@@ -154,23 +155,10 @@ export default function StretchesScreen() {
     </View>
   );
 
-  const renderItem = ({ item }) => (
-    <Item title={item.title} image={item.image} section={item.section} />
-  );
-
-  const modalItem = ({ modalTitle, modalDesc }) => (
-    <View style={styles.modalItem}>
-      <Text style={styles.modalTitle}>{modalTitle}</Text>
-      <Text style={styles.modalDesc}>{modalDesc}</Text>
-    </View>
-  );
-
-  const renderModalItem = ({ modalItem }) => (
-    <modalItem
-      modalTitle={modalItem.modalTitle}
-      modalDesc={modalItem.modalDesc}
-    />
-  );
+  const openSettingsModal = (item) => {
+    setCurrentItem(item);
+    setModalVisible(!modalVisible);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -179,7 +167,6 @@ export default function StretchesScreen() {
       </View>
       <Modal
         animationType="slide"
-        renderItem={modalItem}
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
@@ -188,8 +175,8 @@ export default function StretchesScreen() {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World</Text>
-
+            <Text style={styles.modalText}>{currentItem.modalTitle}</Text>
+            <Text style={styles.modalText}>{currentItem.modalDesc}</Text>
             <TouchableHighlight
               style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
               onPress={() => {
@@ -203,7 +190,7 @@ export default function StretchesScreen() {
       </Modal>
       <FlatList
         data={DATA}
-        renderItem={renderItem}
+        renderItem={({ item }) => <Item item={item} />}
         keyExtractor={(item) => item.id}
       />
     </SafeAreaView>
@@ -307,7 +294,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   modalText: {
-    marginBottom: 15,
     textAlign: "center",
   },
 });

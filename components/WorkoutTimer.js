@@ -9,11 +9,14 @@ import {
   Image,
   SafeAreaView,
 } from "react-native";
+
 import { CountdownCircleTimer } from "react-native-countdown-circle-timer";
+import { Colors } from "../colors/Colors";
 
 export default function WorkoutTimer() {
-  const [count, setCount] = useState(0);
-  const [completedTime, setCompletedTime] = useState(0);
+  const [count, setCount] = useState(1);
+  const [exerciseCount, setExerciseCount] = useState(0);
+  const [workoutCount, setWorkoutCount] = useState(0);
 
   const exercise = new Array(21);
   exercise[1] = require("../assets/FR1.png");
@@ -38,32 +41,50 @@ export default function WorkoutTimer() {
   exercise[20] = require("../assets/S12.png");
   exercise[21] = require("../assets/S13.png");
 
-  useEffect(() => {
-    setCount((prev) => prev + 1);
-  }, [completedTime, setCount]);
-
   return (
     <View style={styles.container}>
       <View style={styles.timerCont}>
         <CountdownCircleTimer
-          {...props}
-          onComplete={() => {
-            countRef.current += 1;
-            setCompletedTime(Date.now()); // new value every time it hits the onComplete
-            return [true, 0];
-          }}
           isPlaying
-          duration={5}
+          duration={45}
           size={240}
           colors={"#7B4FFF"}
+          onComplete={() => {
+            setCount((prevState) => prevState + 1);
+            setExerciseCount((prevState) => prevState + 1);
+
+            if (count == 21) {
+              return [false, 0];
+            }
+            return [(true, 1000)]; // repeat animation for one second
+          }}
         >
           {({ remainingTime, animatedColor }) => (
-            <Animated.Text style={{ color: animatedColor }}>
-              {remainingTime}
-            </Animated.Text>
+            <View>
+              <Image
+                source={exercise[count]}
+                style={{
+                  width: 150,
+                  height: 150,
+                }}
+              />
+              <View style={styles.timeOutside}>
+                <Animated.Text
+                  style={{
+                    color: animatedColor,
+                    fontSize: 18,
+                    position: "absolute",
+                    marginTop: 67,
+                    marginLeft: 35,
+                  }}
+                >
+                  {remainingTime}
+                </Animated.Text>
+                <Text style={styles.value}>seconds</Text>
+              </View>
+            </View>
           )}
         </CountdownCircleTimer>
-        <Image source={exercise[count]} style={{ width: 150, height: 150 }} />
       </View>
     </View>
   );
@@ -83,5 +104,28 @@ const styles = StyleSheet.create({
     left: 0,
     alignItems: "center",
     justifyContent: "center",
+    fontFamily: "Roboto",
+  },
+  timer: {
+    fontFamily: "lato-regular",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    fontSize: 18,
+    color: Colors.primary,
+  },
+  text: {
+    color: "#aaa",
+    fontSize: 18,
+  },
+  value: {
+    fontSize: 20,
+    color: Colors.primary,
+    position: "absolute",
+    marginTop: 65,
+    marginLeft: 60,
+  },
+  timeOutside: {
+    bottom: 11,
   },
 });

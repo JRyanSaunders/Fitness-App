@@ -66,18 +66,19 @@ const DATA = [
 
 export default function ExercisesScreen() {
   const [modalVisible, setModalVisible] = useState(false);
+  const [currentItem, setCurrentItem] = useState({});
 
-  const Item = ({ title, image, section }) => (
+  const Item = ({ item }) => (
     <View style={styles.item}>
-      <Image source={image} style={styles.exerciseImage} />
+      <Image source={item.image} style={styles.exerciseImage} />
       <View style={styles.detailSection}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.section}>{section}</Text>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.section}>{item.section}</Text>
       </View>
       <TouchableOpacity
         style={styles.viewButton}
         onPress={() => {
-          setModalVisible(true);
+          openSettingsModal(item);
         }}
       >
         <Text style={styles.viewText}>View</Text>
@@ -85,9 +86,10 @@ export default function ExercisesScreen() {
     </View>
   );
 
-  const renderItem = ({ item }) => (
-    <Item title={item.title} image={item.image} section={item.section} />
-  );
+  const openSettingsModal = (item) => {
+    setCurrentItem(item);
+    setModalVisible(!modalVisible);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -104,8 +106,8 @@ export default function ExercisesScreen() {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World</Text>
-
+            <Text style={styles.modalText}>{currentItem.modalTitle}</Text>
+            <Text style={styles.modalText}>{currentItem.modalDesc}</Text>
             <TouchableHighlight
               style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
               onPress={() => {
@@ -119,7 +121,7 @@ export default function ExercisesScreen() {
       </Modal>
       <FlatList
         data={DATA}
-        renderItem={renderItem}
+        renderItem={({ item }) => <Item item={item} />}
         keyExtractor={(item) => item.id}
       />
     </SafeAreaView>

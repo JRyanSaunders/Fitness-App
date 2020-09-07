@@ -8,7 +8,7 @@ import { Colors } from "../colors/Colors";
 export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>SUMMARY</Text>
+      <Text style={styles.pageRef}>SUMMARY</Text>
       <Text style={styles.heading}>STRETCH & ROLL</Text>
       <View style={styles.content}>
         <TouchableOpacity
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  title: {
+  pageRef: {
     position: "absolute",
     top: 20,
     left: 15,
