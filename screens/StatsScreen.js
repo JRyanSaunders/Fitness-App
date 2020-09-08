@@ -5,8 +5,12 @@ import { exerciseCount, workoutCount } from "../components/WorkoutTimer";
 export default function StatsScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.exerciseText}>{exerciseCount}</Text>
-      <Text style={styles.workoutText}>{workoutCount}</Text>
+      <Text display={exerciseCount} style={styles.exerciseText}>
+        {exerciseCount}
+      </Text>
+      <Text display={workoutCount} style={styles.workoutText}>
+        {workoutCount}
+      </Text>
     </View>
   );
 }

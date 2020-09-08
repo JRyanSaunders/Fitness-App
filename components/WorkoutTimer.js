@@ -13,10 +13,8 @@ import {
 import { CountdownCircleTimer } from "react-native-countdown-circle-timer";
 import { Colors } from "../colors/Colors";
 
-export default function WorkoutTimer() {
+export default function WorkoutTimer({ exerciseCount }) {
   const [count, setCount] = useState(1);
-  const [exerciseCount, setExerciseCount] = useState(0);
-  const [workoutCount, setWorkoutCount] = useState(0);
 
   const exercise = new Array(21);
   exercise[1] = require("../assets/FR1.png");

@@ -4,9 +4,11 @@ import { StyleSheet, Text, View } from "react-native";
 import WorkoutTimer from "../components/WorkoutTimer";
 
 export default function WorkoutScreen() {
+  const exerciseCount = navigation.getParam(exerciseCount);
+
   return (
     <View style={styles.container}>
-      <WorkoutTimer />
+      <WorkoutTimer exerciseCount={exerciseCount} />
     </View>
   );
 }
