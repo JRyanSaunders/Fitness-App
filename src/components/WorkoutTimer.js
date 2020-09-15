@@ -17,27 +17,27 @@ export default function WorkoutTimer({ exerciseCount }) {
   const [count, setCount] = useState(1);
 
   const exercise = new Array(21);
-  exercise[1] = require("../assets/FR1.png");
-  exercise[2] = require("../assets/FR2.png");
-  exercise[3] = require("../assets/FR3.png");
-  exercise[4] = require("../assets/FR4.png");
-  exercise[5] = require("../assets/FR5.png");
-  exercise[6] = require("../assets/FR6.png");
-  exercise[7] = require("../assets/FR7.png");
-  exercise[8] = require("../assets/FR8.png");
-  exercise[9] = require("../assets/S1.png");
-  exercise[10] = require("../assets/S2.png");
-  exercise[11] = require("../assets/S3.png");
-  exercise[12] = require("../assets/S4.png");
-  exercise[13] = require("../assets/S5.png");
-  exercise[14] = require("../assets/S6.png");
-  exercise[15] = require("../assets/S7.png");
-  exercise[16] = require("../assets/S8.png");
-  exercise[17] = require("../assets/S9.png");
-  exercise[18] = require("../assets/S10.png");
-  exercise[19] = require("../assets/S11.png");
-  exercise[20] = require("../assets/S12.png");
-  exercise[21] = require("../assets/S13.png");
+  exercise[1] = require("../../assets/FR1.png");
+  exercise[2] = require("../../assets/FR2.png");
+  exercise[3] = require("../../assets/FR3.png");
+  exercise[4] = require("../../assets/FR4.png");
+  exercise[5] = require("../../assets/FR5.png");
+  exercise[6] = require("../../assets/FR6.png");
+  exercise[7] = require("../../assets/FR7.png");
+  exercise[8] = require("../../assets/FR8.png");
+  exercise[9] = require("../../assets/S1.png");
+  exercise[10] = require("../../assets/S2.png");
+  exercise[11] = require("../../assets/S3.png");
+  exercise[12] = require("../../assets/S4.png");
+  exercise[13] = require("../../assets/S5.png");
+  exercise[14] = require("../../assets/S6.png");
+  exercise[15] = require("../../assets/S7.png");
+  exercise[16] = require("../../assets/S8.png");
+  exercise[17] = require("../../assets/S9.png");
+  exercise[18] = require("../../assets/S10.png");
+  exercise[19] = require("../../assets/S11.png");
+  exercise[20] = require("../../assets/S12.png");
+  exercise[21] = require("../../assets/S13.png");
 
   return (
     <View style={styles.container}>
@@ -49,7 +49,6 @@ export default function WorkoutTimer({ exerciseCount }) {
           colors={"#7B4FFF"}
           onComplete={() => {
             setCount((prevState) => prevState + 1);
-            setExerciseCount((prevState) => prevState + 1);
 
             if (count == 21) {
               return [false, 0];

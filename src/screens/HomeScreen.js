@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, SafeAreaView, Button } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { AntDesign } from "@expo/vector-icons";
@@ -6,9 +6,6 @@ import { AntDesign } from "@expo/vector-icons";
 import { Colors } from "../colors/Colors";
 
 export default function HomeScreen({ navigation }) {
-  const [exerciseCount, setExerciseCount] = useState(0);
-  const [workoutCount, setWorkoutCount] = useState(0);
-
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.pageRef}>SUMMARY</Text>
@@ -16,15 +13,13 @@ export default function HomeScreen({ navigation }) {
       <View style={styles.content}>
         <TouchableOpacity
           style={styles.timerDefault}
-          onPress={() =>
-            navigation.navigate("WorkoutScreen", { exerciseCount })
-          }
+          onPress={() => navigation.navigate("WorkoutScreen")}
         >
           <Button title="START WORKOUT" color={Colors.primary} />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.statContainer}
-          onPress={() => navigation.navigate("StatsScreen", { exerciseCount })}
+          onPress={() => navigation.navigate("StatsScreen")}
         >
           <AntDesign name="barschart" size={18} color={Colors.primary} />
           <Text style={{ color: Colors.primary }}>Statistics</Text>

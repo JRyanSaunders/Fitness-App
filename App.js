@@ -10,15 +10,15 @@ import { AppLoading } from "expo";
 import { AntDesign } from "@expo/vector-icons";
 import * as Font from "expo-font";
 
-import { Colors } from "./colors/Colors";
+import { Colors } from "./src/colors/Colors";
 
-import HomeScreen from "./screens/HomeScreen";
-import CalendarScreen from "./screens/CalendarScreen";
-import ExercisesScreen_FR from "./screens/ExercisesScreen_FR";
-import SettingsScreen from "./screens/SettingsScreen";
-import WorkoutScreen from "./screens/WorkoutScreen";
-import StatsScreen from "./screens/StatsScreen";
-import ExercisesScreen_S from "./screens/ExercisesScreen_S";
+import HomeScreen from "./src/screens/HomeScreen";
+import CalendarScreen from "./src/screens/CalendarScreen";
+import ExercisesScreen_FR from "./src/screens/ExercisesScreen_FR";
+import SettingsScreen from "./src/screens/SettingsScreen";
+import WorkoutScreen from "./src/screens/WorkoutScreen";
+import StatsScreen from "./src/screens/StatsScreen";
+import ExercisesScreen_S from "./src/screens/ExercisesScreen_S";
 
 const getFonts = () =>
   Font.loadAsync({

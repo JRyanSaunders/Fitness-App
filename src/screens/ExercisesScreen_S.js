@@ -18,7 +18,7 @@ const DATA = [
     id: "1",
     title: "Calves and Hamstrings: one",
     section: "Stretches",
-    image: require("../assets/S1.png"),
+    image: require("../../assets/S1.png"),
     modalTitle: "Calves and Hamstrings: one",
     modalDesc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -27,7 +27,7 @@ const DATA = [
     id: "2",
     title: "Adductors: one",
     section: "Stretches",
-    image: require("../assets/S2.png"),
+    image: require("../../assets/S2.png"),
     modalTitle: "Adductors: one",
     modalDesc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -36,7 +36,7 @@ const DATA = [
     id: "3",
     title: "Adductors: two",
     section: "Stretches",
-    image: require("../assets/S3.png"),
+    image: require("../../assets/S3.png"),
     modalTitle: "Adductors: two",
     modalDesc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -45,7 +45,7 @@ const DATA = [
     id: "4",
     title: "Hip Flexors",
     section: "Stretches",
-    image: require("../assets/S4.png"),
+    image: require("../../assets/S4.png"),
     modalTitle: "Hip Flexors",
     modalDesc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -54,7 +54,7 @@ const DATA = [
     id: "5",
     title: "Calves and Hamstrings: two",
     section: "Stretches",
-    image: require("../assets/S5.png"),
+    image: require("../../assets/S5.png"),
     modalTitle: "Calves and Hamstrings: two",
     modalDesc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -63,7 +63,7 @@ const DATA = [
     id: "6",
     title: "Quads",
     section: "Stretches",
-    image: require("../assets/S6.png"),
+    image: require("../../assets/S6.png"),
     modalTitle: "Quads",
     modalDesc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -72,7 +72,7 @@ const DATA = [
     id: "7",
     title: "Calves and Hamstrings: three",
     section: "Stretches",
-    image: require("../assets/S7.png"),
+    image: require("../../assets/S7.png"),
     modalTitle: "Calves and Hamstrings: three",
     modalDesc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -81,7 +81,7 @@ const DATA = [
     id: "8",
     title: "Glutes (Bum)",
     section: "Stretches",
-    image: require("../assets/S8.png"),
+    image: require("../../assets/S8.png"),
     modalTitle: "Glutes (Bum)",
     modalDesc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -90,7 +90,7 @@ const DATA = [
     id: "9",
     title: "Abs",
     section: "Stretches",
-    image: require("../assets/S9.png"),
+    image: require("../../assets/S9.png"),
     modalTitle: "Abs",
     modalDesc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -99,7 +99,7 @@ const DATA = [
     id: "10",
     title: "Lats (Sides)",
     section: "Stretches",
-    image: require("../assets/S10.png"),
+    image: require("../../assets/S10.png"),
     modalTitle: "Lats (Sides)",
     modalDesc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -108,7 +108,7 @@ const DATA = [
     id: "11",
     title: "Deltoid (Shoulder)",
     section: "Stretches",
-    image: require("../assets/S11.png"),
+    image: require("../../assets/S11.png"),
     modalTitle: "Deltoid (Shoulder)",
     modalDesc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -117,7 +117,7 @@ const DATA = [
     id: "12",
     title: "Triceps",
     section: "Stretches",
-    image: require("../assets/S12.png"),
+    image: require("../../assets/S12.png"),
     modalTitle: "Triceps",
     modalDesc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -126,7 +126,7 @@ const DATA = [
     id: "13",
     title: "Pecs (Chest)",
     section: "Stretches",
-    image: require("../assets/S13.png"),
+    image: require("../../assets/S13.png"),
     modalTitle: "Pecs (Chest)",
     modalDesc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

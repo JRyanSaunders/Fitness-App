@@ -12,61 +12,81 @@ import {
 } from "react-native";
 
 import { Colors } from "../colors/Colors";
+import { firebase } from "../firebase/config";
 
 const DATA = [
   {
     id: "1",
     title: "Calves",
     section: "Foam Roller",
-    image: require("../assets/FR1.png"),
+    image: require("../../assets/FR1.png"),
   },
   {
     id: "2",
     title: "Tibialis Anterior (Shin)",
     section: "Foam Roller",
-    image: require("../assets/FR2.png"),
+    image: require("../../assets/FR2.png"),
   },
   {
     id: "3",
     title: "Quads",
     section: "Foam Roller",
-    image: require("../assets/FR3.png"),
+    image: require("../../assets/FR3.png"),
   },
   {
     id: "4",
     title: "ITB (Outside of legs)",
     section: "Foam Roller",
-    image: require("../assets/FR4.png"),
+    image: require("../../assets/FR4.png"),
   },
   {
     id: "5",
     title: "Glutes (Bum)",
     section: "Foam Roller",
-    image: require("../assets/FR5.png"),
+    image: require("../../assets/FR5.png"),
   },
   {
     id: "6",
     title: "Traps (Back)",
     section: "Foam Roller",
-    image: require("../assets/FR6.png"),
+    image: require("../../assets/FR6.png"),
   },
   {
     id: "7",
     title: "Lats (Side)",
     section: "Foam Roller",
-    image: require("../assets/FR7.png"),
+    image: require("../../assets/FR7.png"),
   },
   {
     id: "8",
     title: "Pecs (Chest)",
     section: "Foam Roller",
-    image: require("../assets/FR8.png"),
+    image: require("../../assets/FR8.png"),
   },
 ];
 
 export default function ExercisesScreen() {
   const [modalVisible, setModalVisible] = useState(false);
   const [currentItem, setCurrentItem] = useState({});
+  const [entities, setEntities] = useState([]);
+
+  const entityRef = firebase.firestore().collection("entities");
+  const storageRef = firebase.storage().ref("images/foamRoll");
+
+  useEffect(() => {
+    storageRef.list().then((result) => {
+      result.items.forEach((pics) => {
+        firebase
+          .storage()
+          .ref()
+          .child("images/foamRoll")
+          .getDownloadURL()
+          .then((url) => {
+            console.log(url);
+          });
+      });
+    });
+  }, []);
 
   const Item = ({ item }) => (
     <View style={styles.item}>
