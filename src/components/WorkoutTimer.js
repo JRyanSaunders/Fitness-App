@@ -1,26 +1,25 @@
-import React, { useState, useEffect, useRef, createContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   StyleSheet,
   Text,
   View,
   TouchableOpacity,
-  TouchableWithoutFeedback,
-  Button,
   Animated,
   Image,
-  SafeAreaView,
 } from "react-native";
 
 import { CountdownCircleTimer } from "react-native-countdown-circle-timer";
 import { AntDesign } from "@expo/vector-icons";
 import { Colors } from "../colors/Colors";
+import { ExerciseContext } from "../components/ExerciseContext";
 
 export default function WorkoutTimer() {
   const [count, setCount] = useState(1);
   const [key, setKey] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [disabled, setDisabled] = useState(false);
-  const [exerciseStat, setExerciseStat] = useState(0);
+
+  const { value, setExerciseCount } = useContext(ExerciseContext);
 
   const exercise = new Array(21);
   exercise[1] = require("../../assets/images/FR1.png");
@@ -71,7 +70,7 @@ export default function WorkoutTimer() {
           //renderTime={renderTime}
           onComplete={() => {
             setCount((prevState) => prevState + 1);
-            setExerciseStat((prevState) => prevState + 1);
+            setExerciseCount((prevState) => prevState + 1);
             if (count >= 21) {
               return [false, 0];
             }

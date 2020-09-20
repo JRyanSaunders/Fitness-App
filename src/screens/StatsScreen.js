@@ -3,10 +3,10 @@ import { StyleSheet, Text, View } from "react-native";
 import { ExerciseContext } from "../components/ExerciseContext";
 
 export default function StatsScreen() {
-  const msg = ExerciseContext();
+  const { value, setExerciseCount } = useContext(ExerciseContext);
   return (
     <View style={styles.container}>
-      <Text style={styles.exerciseText}> {msg}</Text>
+      <Text style={styles.exerciseText}> {value}</Text>
       <Text style={styles.workoutText}></Text>
     </View>
   );

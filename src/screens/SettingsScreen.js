@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, View, Switch } from "react-native";
-import { Card, Text, ButtonGroup, Button } from "react-native-elements";
-import { Form, Item, Input, Body, CheckBox, Col } from "native-base";
+import { Text, Button } from "react-native-elements";
 import { Colors } from "../colors/Colors";
 
 export default function SettingsScreen() {
