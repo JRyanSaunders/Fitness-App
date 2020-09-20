@@ -19,7 +19,7 @@ export default function WorkoutTimer() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [disabled, setDisabled] = useState(false);
 
-  const { value, setExerciseCount } = useContext(ExerciseContext);
+  const { exerciseCount, setExerciseCount } = useContext(ExerciseContext);
 
   const exercise = new Array(21);
   exercise[1] = require("../../assets/images/FR1.png");

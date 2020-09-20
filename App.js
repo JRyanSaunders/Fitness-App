@@ -19,7 +19,7 @@ import SettingsScreen from "./src/screens/SettingsScreen";
 import WorkoutScreen from "./src/screens/WorkoutScreen";
 import StatsScreen from "./src/screens/StatsScreen";
 import ExercisesScreen_S from "./src/screens/ExercisesScreen_S";
-import { ExerciseContext } from "./src/components/ExerciseContext";
+import { ExerciseProvider } from "./src/components/ExerciseContext";
 
 const getFonts = () =>
   Font.loadAsync({
@@ -129,19 +129,19 @@ function MyTopTabs() {
 
 export default function App() {
   const [exerciseCount, setExerciseCount] = useState(0);
-  const providerValue = useMemo(() => ({ exerciseCount, setExerciseCount }), [
-    exerciseCount,
-    setExerciseCount,
-  ]);
+  // const providerValue = useMemo(() => ({ exerciseCount, setExerciseCount }), [
+  //   exerciseCount,
+  //   setExerciseCount,
+  // ]);
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   if (fontsLoaded) {
     return (
-      <ExerciseContext.Provider value={providerValue}>
+      <ExerciseProvider>
         <NavigationContainer>
           <MyTabs />
         </NavigationContainer>
-      </ExerciseContext.Provider>
+      </ExerciseProvider>
     );
   } else {
     return (
