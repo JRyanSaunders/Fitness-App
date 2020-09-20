@@ -18,3 +18,6 @@ if (!firebase.apps.length) {
 }
 
 export { firebase };
+
+// Generally, the purpose of using firebase or something similar, is because you’ll be having data that is shared between users, ie something like Twitter where you follow what other people post. If you’re not planning on sharing any data, there’s no upside to using firebase, in fact it would be detrimental to your app. You’re much better storing everything locally
+// Something you’ll learn with experience, is to have a REASON to do something. Not just because it’s a shiny new thing, or you see a tutorial or something

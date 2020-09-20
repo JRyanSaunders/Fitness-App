@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { ExerciseContext } from "../components/ExerciseContext";
 
 export default function StatsScreen() {
+  const msg = ExerciseContext();
   return (
     <View style={styles.container}>
-      <Text style={styles.exerciseText}></Text>
+      <Text style={styles.exerciseText}> {msg}</Text>
       <Text style={styles.workoutText}></Text>
     </View>
   );

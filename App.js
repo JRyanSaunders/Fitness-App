@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
@@ -19,6 +19,7 @@ import SettingsScreen from "./src/screens/SettingsScreen";
 import WorkoutScreen from "./src/screens/WorkoutScreen";
 import StatsScreen from "./src/screens/StatsScreen";
 import ExercisesScreen_S from "./src/screens/ExercisesScreen_S";
+import ExerciseContext from "./src/components/ExerciseContext";
 
 const getFonts = () =>
   Font.loadAsync({
@@ -34,7 +35,7 @@ function MyTabs() {
     <Tab.Navigator
       initialRouteName="Home"
       tabBarOptions={{
-        activeTintColor: "#7B4FFF",
+        activeTintColor: Colors.primary,
       }}
     >
       <Tab.Screen
@@ -131,9 +132,11 @@ export default function App() {
 
   if (fontsLoaded) {
     return (
-      <NavigationContainer>
-        <MyTabs />
-      </NavigationContainer>
+      <ExerciseContext.Provider value="hello this is a test">
+        <NavigationContainer>
+          <MyTabs />
+        </NavigationContainer>
+      </ExerciseContext.Provider>
     );
   } else {
     return (

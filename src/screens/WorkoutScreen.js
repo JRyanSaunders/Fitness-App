@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 import WorkoutTimer from "../components/WorkoutTimer";
 
-export default function WorkoutScreen() {
+export default function WorkoutScreen(props) {
   return (
     <View style={styles.container}>
       <WorkoutTimer />

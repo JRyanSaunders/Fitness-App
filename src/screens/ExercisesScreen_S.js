@@ -18,118 +18,118 @@ const DATA = [
     id: "1",
     title: "Calves and Hamstrings: one",
     section: "Stretches",
-    image: require("../../assets/S1.png"),
+    image: require("../../assets/images/S1.png"),
     modalTitle: "Calves and Hamstrings: one",
     modalDesc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Sit on the ground with the left leg bent at the knee with the foot facing inward. This is called the butterfly position. Extend the right leg, keeping it slightly bent at the knee. Bend forward at the waist, making sure to keep the back straight.",
   },
   {
     id: "2",
-    title: "Adductors: one",
+    title: "Calves and Hamstrings: two",
     section: "Stretches",
-    image: require("../../assets/S2.png"),
+    image: require("../../assets/images/S2.png"),
     modalTitle: "Adductors: one",
     modalDesc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Stand straight with your legs about hip width apart. You want your legs to be straight, but don’t aggressively lock out your knees either (this feels like a “microbend” to a lot of people). Begin by bending and leaning forward towards the ground with your quads (front of your legs). Let your body rest naturally, as if you were a ragdoll. Keeping your hands relatively close together, straighten your fingers and begin to stretch down slowly to the ground.",
   },
   {
     id: "3",
-    title: "Adductors: two",
+    title: "Adductors: one",
     section: "Stretches",
-    image: require("../../assets/S3.png"),
+    image: require("../../assets/images/S3.png"),
     modalTitle: "Adductors: two",
     modalDesc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "To stretch both sides simultaneously sit with your legs straight out in front of you with your back straight. Slowly work your legs apart as far as they will go. Hold this and relax for a few seconds. Now as you exhale bend forward at your hips until you feel more resistance. Be sure to keep your chest up and maintain a lumbar lordosis (normal inward curvature of the lower back).",
   },
   {
     id: "4",
-    title: "Hip Flexors",
+    title: "Quads",
     section: "Stretches",
-    image: require("../../assets/S4.png"),
+    image: require("../../assets/images/S4.png"),
     modalTitle: "Hip Flexors",
     modalDesc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "From a standing position with your knees together, lift one foot and grasp it with your hand. Gently press your foot towards your glutes until you feel a stretch along the front of your thigh.",
   },
   {
     id: "5",
-    title: "Calves and Hamstrings: two",
+    title: "Adductors: two",
     section: "Stretches",
-    image: require("../../assets/S5.png"),
+    image: require("../../assets/images/S5.png"),
     modalTitle: "Calves and Hamstrings: two",
     modalDesc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Sitting with your legs extended. Bend your knees towards you while keeping your feet together. Let your knees fall out to the sides. You should feel a stretch in the groin region. To increase the stretch, place your elbows on your knees and push down.",
   },
   {
     id: "6",
-    title: "Quads",
+    title: "Calves and Hamstrings: three",
     section: "Stretches",
-    image: require("../../assets/S6.png"),
+    image: require("../../assets/images/S6.png"),
     modalTitle: "Quads",
     modalDesc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Stand upright with the spine in a neutral position. Place the right leg in front of the body with the foot flexed, the heel pushed into the ground, and the toe pointing toward the ceiling. Slightly bend the left knee. Gently lean forward and place the hands on the straight right leg. Keep a neutral spine.",
   },
   {
     id: "7",
-    title: "Calves and Hamstrings: three",
+    title: "Hip Flexors",
     section: "Stretches",
-    image: require("../../assets/S7.png"),
+    image: require("../../assets/images/S7.png"),
     modalTitle: "Calves and Hamstrings: three",
     modalDesc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Kneel with your left knee on the floor and your right leg at a 90-degree angle in front of you. Put your hands on your right knee and keep your back straight. Keeping your left knee pressed to the floor, lean forward into your right hip while squeezing the muscles in your left buttocks. Hold for and repeat on the other side.",
   },
   {
     id: "8",
     title: "Glutes (Bum)",
     section: "Stretches",
-    image: require("../../assets/S8.png"),
+    image: require("../../assets/images/S8.png"),
     modalTitle: "Glutes (Bum)",
     modalDesc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "You could also do the pigeon pose or Seated figure-four stretch. But for this example we will use the standing figure-four stretch. Stand up straight. Cross your left ankle over your right thigh, just above the knee to make a 4 shape. Hold on to a desk or wall for support. Slowly bend your right knee, moving your hips down into a squat position. Pause when you feel a stretch in your left glute.",
   },
   {
     id: "9",
     title: "Abs",
     section: "Stretches",
-    image: require("../../assets/S9.png"),
+    image: require("../../assets/images/S9.png"),
     modalTitle: "Abs",
     modalDesc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "The cobra pose. Start by lying on the floor face down with your hands under your shoulders. Keep your hips on the floor as you lift your upper body with your arms so your chest is out and you’re facing forward. To get more out of the stretch, straighten your arms fully and lift your hips slightly off of the ground.",
   },
   {
     id: "10",
-    title: "Lats (Sides)",
+    title: "Triceps",
     section: "Stretches",
-    image: require("../../assets/S10.png"),
+    image: require("../../assets/images/S10.png"),
     modalTitle: "Lats (Sides)",
     modalDesc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Stand straight with your feet shoulder width apart and knees slight bent. Point your left elbow toward the ceiling and touch the center of your upper back with your left hand. If you're not able to reach your upper back, put your hand on the back of your head instead. Bend your head forward when you put your hand on it, and then push your head back gently to increase the pull on your triceps.",
   },
   {
     id: "11",
-    title: "Deltoid (Shoulder)",
+    title: "Pecs (Chest)",
     section: "Stretches",
-    image: require("../../assets/S11.png"),
+    image: require("../../assets/images/S11.png"),
     modalTitle: "Deltoid (Shoulder)",
     modalDesc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Pull a towel behind your back (You can also use your hands if you have good mobility). Stand with your feet about hip-width apart, shoulders relaxed back. Hold the towel behind your back gripping one end in each hand, elbows straight. Pull back with your hands until your shoulders are open and extended and you feel a stretch in your chest.",
   },
   {
     id: "12",
-    title: "Triceps",
+    title: "Lats (sides)",
     section: "Stretches",
-    image: require("../../assets/S12.png"),
+    image: require("../../assets/images/S12.png"),
     modalTitle: "Triceps",
     modalDesc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Stand up straight. Reach back toward your left hip with your left palm on the floor for balance. Extend your right arm towards the ceiling in this position and then extend it over your head and as far to the left as you can. Bend you torso to your left side when you begin extending your arm and keep your butt in the right position on the floor. Hold the position until you feel a stretch on your back’s right side.",
   },
   {
     id: "13",
-    title: "Pecs (Chest)",
+    title: "Deltoid (Shoulder)",
     section: "Stretches",
-    image: require("../../assets/S13.png"),
+    image: require("../../assets/images/S13.png"),
     modalTitle: "Pecs (Chest)",
     modalDesc:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Relax your shoulders. Reach one arm across your body, using your other arm or wrist to hold it gently by your upper arm. Slowly begin to pull your arm toward your chest, as far as possible, allowing the stretch to reach deep into the back of your shoulder. Pause, breathing deeply into the stretch.",
   },
 ];
 
@@ -183,7 +183,7 @@ export default function StretchesScreen() {
                 setModalVisible(!modalVisible);
               }}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle}>Close</Text>
             </TouchableHighlight>
           </View>
         </View>
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
   exerciseImage: {
     width: "20%",
     height: 60,
-    borderRadius: 30,
+    borderRadius: 0,
     marginRight: 30,
   },
   detailSection: {
