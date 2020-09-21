@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, Switch } from "react-native";
 import { Text, Button } from "react-native-elements";
+
 import { Colors } from "../colors/Colors";
 
 export default function SettingsScreen() {
+  const [isNotifEnabled, setIsNotifEnabled] = useState(true);
+  const [isLockEnabled, setIsLockEnabled] = useState(true);
+
+  const toggleNotifSwitch = () =>
+    setIsNotifEnabled((previousState) => !previousState);
+
+  const toggleLockSwitch = () =>
+    setIsLockEnabled((previousState) => !previousState);
+
   return (
     <View style={styles.container}>
       <Text style={styles.pageRef}>SETTINGS</Text>
@@ -16,7 +26,14 @@ export default function SettingsScreen() {
           <Text style={{ fontSize: 16, color: Colors.primaryFont }}>
             Show Notifications
           </Text>
-          <Switch style={{ marginLeft: 16 }} />
+          <Switch
+            trackColor={{ false: "#767577", true: Colors.primary }}
+            thumbColor={isNotifEnabled ? "#ffffff" : "#f4f3f4"}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={toggleNotifSwitch}
+            value={isNotifEnabled}
+            style={{ marginLeft: 16 }}
+          />
         </View>
         <Text style={styles.lockDesc}>
           Recieve workout reminders and notifications straight to your phone!
@@ -26,7 +43,14 @@ export default function SettingsScreen() {
           <Text style={{ fontSize: 16, color: Colors.primaryFont }}>
             Auto-Lock Display
           </Text>
-          <Switch style={{ marginLeft: 16, marginTop: 12 }} />
+          <Switch
+            trackColor={{ false: "#767577", true: Colors.primary }}
+            thumbColor={isLockEnabled ? "#ffffff" : "#f4f3f4"}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={toggleLockSwitch}
+            value={isLockEnabled}
+            style={{ marginLeft: 16 }}
+          />
         </View>
         <Text style={styles.lockDesc}>
           Keeping your phone from going to sleep during workouts consumes more

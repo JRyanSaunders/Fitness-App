@@ -19,7 +19,8 @@ export default function WorkoutTimer() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [disabled, setDisabled] = useState(false);
 
-  const { exerciseCount, setExerciseCount } = useContext(ExerciseContext);
+  const [exerciseCount, setExerciseCount] = useContext(ExerciseContext);
+  //const [workoutCount, setWorkoutCount] = useContext(ExerciseContext);
 
   const exercise = new Array(21);
   exercise[1] = require("../../assets/images/FR1.png");
@@ -71,7 +72,9 @@ export default function WorkoutTimer() {
           onComplete={() => {
             setCount((prevState) => prevState + 1);
             setExerciseCount((prevState) => prevState + 1);
+
             if (count >= 21) {
+              //setWorkoutCount((prevState) => prevState + 1);
               return [false, 0];
             }
             return [true, 0];
@@ -147,7 +150,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   timerCont: {
-    top: 0,
+    bottom: 20,
     left: 0,
     alignItems: "center",
     justifyContent: "center",

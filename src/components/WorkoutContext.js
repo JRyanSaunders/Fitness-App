@@ -3,16 +3,16 @@
 // export const ExerciseContext = createContext(null);
 import React, { useState, createContext } from "react";
 
-const ExerciseContext = createContext([{}, () => {}]);
+const WorkoutContext = createContext([{}, () => {}]);
 
-const ExerciseProvider = (props) => {
+const WorkoutProvider = (props) => {
   const [state, setState] = useState(0);
 
   return (
-    <ExerciseContext.Provider value={[state, setState]}>
+    <WorkoutContext.Provider value={[state, setState]}>
       {props.children}
-    </ExerciseContext.Provider>
+    </WorkoutContext.Provider>
   );
 };
 
-export { ExerciseContext, ExerciseProvider };
+export { WorkoutContext, WorkoutProvider };
