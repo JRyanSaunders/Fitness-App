@@ -130,7 +130,7 @@ export default function ExercisesScreen() {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>{currentItem.modalTitle}</Text>
+            <Text style={styles.modalTitle}>{currentItem.modalTitle}</Text>
             <Text style={styles.modalText}>{currentItem.modalDesc}</Text>
             <TouchableHighlight
               style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
@@ -249,6 +249,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   modalText: {
+    marginBottom: 15,
+    textAlign: "center",
+  },
+  modalTitle: {
+    fontWeight: "bold",
     marginBottom: 15,
     textAlign: "center",
   },

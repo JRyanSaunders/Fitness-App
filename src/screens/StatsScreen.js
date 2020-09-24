@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { ExerciseContext } from "../components/ExerciseContext";
-//import { WorkoutContext } from "../components/WorkoutContext";
 
 import { AntDesign } from "@expo/vector-icons";
 import { Colors } from "../colors/Colors";
@@ -16,7 +15,7 @@ import { Colors } from "../colors/Colors";
 
 export default function StatsScreen() {
   const [exerciseCount, setExerciseCount] = useContext(ExerciseContext);
-  //const [workoutCount, setWorkoutCount] = useContext(WorkoutContext);
+  //const [workoutCount, setWorkoutCount] = useContext(ExerciseContext);
 
   const save = async () => {
     try {
@@ -74,6 +73,9 @@ export default function StatsScreen() {
         />
         <Text style={styles.headerOne}>Exercises Completed:</Text>
         <Text style={styles.exerciseNumber}> {exerciseCount}</Text>
+        <TouchableOpacity style={styles.save} onPress={() => save()}>
+          <Text style={{ color: "white", fontWeight: "bold" }}>Save</Text>
+        </TouchableOpacity>
         <TouchableOpacity style={styles.remove} onPress={() => remove()}>
           <Text style={{ color: "white", fontWeight: "bold" }}>Restart</Text>
         </TouchableOpacity>
@@ -141,6 +143,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     bottom: 0,
     left: 0,
+    backgroundColor: "#fc6781",
+    borderRadius: 10,
+    marginLeft: "10%",
+    marginTop: 5,
+  },
+  save: {
+    width: "15%",
+    position: "absolute",
+    padding: 5,
+    alignItems: "center",
+    bottom: 14,
+    left: 110,
     backgroundColor: "#fc6781",
     borderRadius: 10,
     marginLeft: "10%",

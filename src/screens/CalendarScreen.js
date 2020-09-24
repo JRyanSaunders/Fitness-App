@@ -9,7 +9,6 @@ import {
 } from "react-native";
 
 import { Colors } from "../colors/Colors";
-import { AntDesign } from "@expo/vector-icons";
 
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 import moment from "moment";

@@ -28,7 +28,7 @@ const DATA = [
     title: "Calves and Hamstrings: two",
     section: "Stretches",
     image: require("../../assets/images/S2.png"),
-    modalTitle: "Adductors: one",
+    modalTitle: "Calves and Hamstrings: two",
     modalDesc:
       "Stand straight with your legs about hip width apart. You want your legs to be straight, but don’t aggressively lock out your knees either (this feels like a “microbend” to a lot of people). Begin by bending and leaning forward towards the ground with your quads (front of your legs). Let your body rest naturally, as if you were a ragdoll. Keeping your hands relatively close together, straighten your fingers and begin to stretch down slowly to the ground.",
   },
@@ -37,7 +37,7 @@ const DATA = [
     title: "Adductors: one",
     section: "Stretches",
     image: require("../../assets/images/S3.png"),
-    modalTitle: "Adductors: two",
+    modalTitle: "Adductors: one",
     modalDesc:
       "To stretch both sides simultaneously sit with your legs straight out in front of you with your back straight. Slowly work your legs apart as far as they will go. Hold this and relax for a few seconds. Now as you exhale bend forward at your hips until you feel more resistance. Be sure to keep your chest up and maintain a lumbar lordosis (normal inward curvature of the lower back).",
   },
@@ -46,7 +46,7 @@ const DATA = [
     title: "Quads",
     section: "Stretches",
     image: require("../../assets/images/S4.png"),
-    modalTitle: "Hip Flexors",
+    modalTitle: "Quads",
     modalDesc:
       "From a standing position with your knees together, lift one foot and grasp it with your hand. Gently press your foot towards your glutes until you feel a stretch along the front of your thigh.",
   },
@@ -55,7 +55,7 @@ const DATA = [
     title: "Adductors: two",
     section: "Stretches",
     image: require("../../assets/images/S5.png"),
-    modalTitle: "Calves and Hamstrings: two",
+    modalTitle: "Adductors: two",
     modalDesc:
       "Sitting with your legs extended. Bend your knees towards you while keeping your feet together. Let your knees fall out to the sides. You should feel a stretch in the groin region. To increase the stretch, place your elbows on your knees and push down.",
   },
@@ -64,7 +64,7 @@ const DATA = [
     title: "Calves and Hamstrings: three",
     section: "Stretches",
     image: require("../../assets/images/S6.png"),
-    modalTitle: "Quads",
+    modalTitle: "Calves and Hamstrings: three",
     modalDesc:
       "Stand upright with the spine in a neutral position. Place the right leg in front of the body with the foot flexed, the heel pushed into the ground, and the toe pointing toward the ceiling. Slightly bend the left knee. Gently lean forward and place the hands on the straight right leg. Keep a neutral spine.",
   },
@@ -73,7 +73,7 @@ const DATA = [
     title: "Hip Flexors",
     section: "Stretches",
     image: require("../../assets/images/S7.png"),
-    modalTitle: "Calves and Hamstrings: three",
+    modalTitle: "Hip Flexors",
     modalDesc:
       "Kneel with your left knee on the floor and your right leg at a 90-degree angle in front of you. Put your hands on your right knee and keep your back straight. Keeping your left knee pressed to the floor, lean forward into your right hip while squeezing the muscles in your left buttocks. Hold for and repeat on the other side.",
   },
@@ -100,7 +100,7 @@ const DATA = [
     title: "Triceps",
     section: "Stretches",
     image: require("../../assets/images/S10.png"),
-    modalTitle: "Lats (Sides)",
+    modalTitle: "Triceps",
     modalDesc:
       "Stand straight with your feet shoulder width apart and knees slight bent. Point your left elbow toward the ceiling and touch the center of your upper back with your left hand. If you're not able to reach your upper back, put your hand on the back of your head instead. Bend your head forward when you put your hand on it, and then push your head back gently to increase the pull on your triceps.",
   },
@@ -109,7 +109,7 @@ const DATA = [
     title: "Pecs (Chest)",
     section: "Stretches",
     image: require("../../assets/images/S11.png"),
-    modalTitle: "Deltoid (Shoulder)",
+    modalTitle: "Pecs (Chest)",
     modalDesc:
       "Pull a towel behind your back (You can also use your hands if you have good mobility). Stand with your feet about hip-width apart, shoulders relaxed back. Hold the towel behind your back gripping one end in each hand, elbows straight. Pull back with your hands until your shoulders are open and extended and you feel a stretch in your chest.",
   },
@@ -118,7 +118,7 @@ const DATA = [
     title: "Lats (sides)",
     section: "Stretches",
     image: require("../../assets/images/S12.png"),
-    modalTitle: "Triceps",
+    modalTitle: "Lats (sides)",
     modalDesc:
       "Stand up straight. Reach back toward your left hip with your left palm on the floor for balance. Extend your right arm towards the ceiling in this position and then extend it over your head and as far to the left as you can. Bend you torso to your left side when you begin extending your arm and keep your butt in the right position on the floor. Hold the position until you feel a stretch on your back’s right side.",
   },
@@ -127,7 +127,7 @@ const DATA = [
     title: "Deltoid (Shoulder)",
     section: "Stretches",
     image: require("../../assets/images/S13.png"),
-    modalTitle: "Pecs (Chest)",
+    modalTitle: "Deltoid (Shoulder)",
     modalDesc:
       "Relax your shoulders. Reach one arm across your body, using your other arm or wrist to hold it gently by your upper arm. Slowly begin to pull your arm toward your chest, as far as possible, allowing the stretch to reach deep into the back of your shoulder. Pause, breathing deeply into the stretch.",
   },
@@ -175,7 +175,7 @@ export default function StretchesScreen() {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>{currentItem.modalTitle}</Text>
+            <Text style={styles.modalTitle}>{currentItem.modalTitle}</Text>
             <Text style={styles.modalText}>{currentItem.modalDesc}</Text>
             <TouchableHighlight
               style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
@@ -294,6 +294,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   modalText: {
+    marginBottom: 15,
+    textAlign: "center",
+  },
+  modalTitle: {
+    fontWeight: "bold",
+    marginBottom: 15,
     textAlign: "center",
   },
 });

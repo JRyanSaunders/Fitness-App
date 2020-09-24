@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Switch } from "react-native";
+import { StyleSheet, View, Switch, Linking } from "react-native";
 import { Text, Button } from "react-native-elements";
 
 import { Colors } from "../colors/Colors";
+import { Permissions, Notifications } from "expo";
 
 export default function SettingsScreen() {
   const [isNotifEnabled, setIsNotifEnabled] = useState(true);
@@ -22,6 +23,14 @@ export default function SettingsScreen() {
       </View>
       <View style={styles.middle}>
         <Text style={styles.settingsTitle}>Settings Screen</Text>
+        <Text style={styles.lockDesc}>
+          This application is still in early development, let us know what you
+          would like to see on this app!
+        </Text>
+        <Text style={styles.underDev}>
+          Features in this screen are currently in development, let us know what
+          you would like to see in these settings!
+        </Text>
         <View style={styles.row}>
           <Text style={{ fontSize: 16, color: Colors.primaryFont }}>
             Show Notifications
@@ -39,6 +48,7 @@ export default function SettingsScreen() {
           Recieve workout reminders and notifications straight to your phone!
           Notifications are set on by default
         </Text>
+        <Text style={styles.underDev}>(In development)</Text>
         <View style={styles.row}>
           <Text style={{ fontSize: 16, color: Colors.primaryFont }}>
             Auto-Lock Display
@@ -56,7 +66,7 @@ export default function SettingsScreen() {
           Keeping your phone from going to sleep during workouts consumes more
           battery, but it saves you from unlocking your phone between sets
         </Text>
-
+        <Text style={styles.underDev}>(In development)</Text>
         <Button
           containerStyle={styles.restoreButtonContainer}
           buttonStyle={{
@@ -100,6 +110,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
+    margin: 10,
   },
   buttonGroup: {
     height: 60,
@@ -126,7 +137,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 48,
     marginBottom: 24,
     left: 40,
-    bottom: 10,
+    bottom: 0,
     position: "absolute",
   },
   top: {
@@ -173,7 +184,7 @@ const styles = StyleSheet.create({
     color: "#2D3057",
   },
   lockDesc: {
-    padding: 10,
+    padding: 0,
     fontSize: 9,
     width: "100%",
     paddingHorizontal: 5,
@@ -201,5 +212,15 @@ const styles = StyleSheet.create({
     fontSize: 9,
     textDecorationLine: "underline",
     padding: 10,
+  },
+  underDev: {
+    paddingTop: 2,
+    color: "red",
+    fontSize: 9,
+    width: "100%",
+    paddingHorizontal: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 0,
   },
 });

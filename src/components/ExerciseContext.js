@@ -7,6 +7,7 @@ const ExerciseContext = createContext([{}, () => {}]);
 
 const ExerciseProvider = (props) => {
   const [state, setState] = useState(0);
+  //{ exerciseCount: 0, workoutCount: 0 }
 
   return (
     <ExerciseContext.Provider value={[state, setState]}>

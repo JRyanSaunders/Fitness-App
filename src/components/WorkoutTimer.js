@@ -6,12 +6,14 @@ import {
   TouchableOpacity,
   Animated,
   Image,
+  Alert,
 } from "react-native";
 
 import { CountdownCircleTimer } from "react-native-countdown-circle-timer";
 import { AntDesign } from "@expo/vector-icons";
 import { Colors } from "../colors/Colors";
 import { ExerciseContext } from "../components/ExerciseContext";
+import { useNavigation } from "@react-navigation/native";
 
 export default function WorkoutTimer() {
   const [count, setCount] = useState(1);
@@ -75,8 +77,25 @@ export default function WorkoutTimer() {
 
             if (count >= 21) {
               //setWorkoutCount((prevState) => prevState + 1);
-              return [false, 0];
+              const createTwoButtonAlert = () =>
+                Alert.alert(
+                  "Workout Complete!",
+                  "Please return to the home screen.",
+                  [
+                    {
+                      text: "OK",
+                      onPress: () => console.log("okay"),
+                    },
+                  ],
+                  { cancelable: false }
+                );
+
+              return [false, 0], createTwoButtonAlert();
             }
+            if (count === 21) {
+              return <Text style={styles.complete}>Too late...</Text>;
+            }
+
             return [true, 0];
           }}
         >
@@ -89,6 +108,7 @@ export default function WorkoutTimer() {
                   height: 150,
                 }}
               />
+
               <View style={styles.timeOutside}>
                 <Animated.Text
                   style={{
@@ -207,6 +227,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     fontSize: 72,
+    position: "absolute",
+  },
+  complete: {
+    fontFamily: "lato-regular",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    fontSize: 18,
+    marginTop: "25%",
+    marginLeft: "15%",
+    color: Colors.primary,
+    justifyContent: "center",
     position: "absolute",
   },
 });
