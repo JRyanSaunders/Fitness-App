@@ -1,16 +1,9 @@
-import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Modal,
-  Button,
-  SafeAreaView,
-} from "react-native";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 import { Colors } from "../colors/Colors";
 
-import { Calendar, CalendarList, Agenda } from "react-native-calendars";
+import { Calendar } from "react-native-calendars";
 import moment from "moment";
 
 const stretch = { key: "stretch", color: "red" };
@@ -24,9 +17,9 @@ export default function CalendarScreenEdit() {
     <View style={styles.container}>
       <Text style={styles.pageRef}>CALENDAR</Text>
       <Calendar
-        markedDates={this.state._markedDates}
+        markedDates={_markedDates}
         markingType={"multi-dot"}
-        onDayPress={this.onDaySelect}
+        onDayPress={onDaySelect}
         theme={{
           backgroundColor: "#ffffff",
           calendarBackground: "#ffffff",
@@ -63,40 +56,6 @@ export default function CalendarScreenEdit() {
           is, so the recommended frequency is therefore 3-7 days per week.
         </Text>
       </View>
-
-      <Modal
-        style={[styles.modal, styles.modal3]}
-        position={"center"}
-        visible={this.state.isOpen}
-        isDisabled={this.state.isDisabled}
-      >
-        <SafeAreaView style={styles.main}>
-          <View style={styles.answerContainer}>
-            <Text style={styles.text}>Stretch</Text>
-            <Button
-              title={this.state.isDisabledOne ? "YES" : "NO"}
-              onPress={() =>
-                this.setState({ isDisabledOne: !this.state.isDisabledOne })
-              }
-              color={Colors.primary}
-              style={styles.btn}
-            />
-          </View>
-          <View style={styles.answerContainer}>
-            <Text style={styles.text}>Foam Roll</Text>
-            <Button
-              title={this.state.isDisabledTwo ? "YES" : "NO"}
-              onPress={() =>
-                this.setState({ isDisabledTwo: !this.state.isDisabledTwo })
-              }
-              color={Colors.primary}
-              style={styles.btn}
-            />
-          </View>
-
-          <BContent />
-        </SafeAreaView>
-      </Modal>
     </View>
   );
 }
