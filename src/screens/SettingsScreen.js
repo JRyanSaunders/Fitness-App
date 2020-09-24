@@ -81,9 +81,9 @@ export default function SettingsScreen() {
           Enjoying the app? Got a suggestion?{" "}
           <Text
             style={styles.ratingStyle}
-            onPress={() => Linking.openURL("https://google.com")}
+            onPress={() => Linking.openURL("https://www.jack-saunders.com")}
           >
-            Rate us.
+            Contact me.
           </Text>
         </Text>
       </View>

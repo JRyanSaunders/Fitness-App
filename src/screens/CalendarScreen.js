@@ -13,9 +13,8 @@ import { Colors } from "../colors/Colors";
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 import moment from "moment";
 
-const vacation = { key: "vacation", color: "red", selectedDotColor: "blue" };
-const massage = { key: "massage", color: "blue", selectedDotColor: "blue" };
-const workout = { key: "workout", color: "green" };
+const stretch = { key: "stretch", color: "red" };
+const foamRoll = { key: "foamRoll", color: "blue" };
 
 const _format = "YYYY-MM-DD";
 const _today = moment(new Date().dateString).format(_format);
@@ -30,7 +29,6 @@ export default class App extends React.Component {
     isOpen: false,
     isDisabledOne: false,
     isDisabledTwo: false,
-    isDisabledThree: false,
     selectedDay: "",
   };
 
@@ -49,21 +47,16 @@ export default class App extends React.Component {
     const {
       isDisabledOne,
       isDisabledTwo,
-      isDisabledThree,
       _markedDates,
       selectedDay,
     } = this.state;
 
     if (isDisabledOne) {
-      dots.push(vacation);
+      dots.push(stretch);
     }
 
     if (isDisabledTwo) {
-      dots.push(massage);
-    }
-
-    if (isDisabledThree) {
-      dots.push(workout);
+      dots.push(foamRoll);
     }
 
     if (_markedDates[selectedDay]) {
@@ -79,7 +72,6 @@ export default class App extends React.Component {
       _markedDates: clone,
       isDisabledOne: false,
       isDisabledTwo: false,
-      isDisabledThree: false,
     });
   };
 
@@ -144,9 +136,9 @@ export default class App extends React.Component {
           visible={this.state.isOpen}
           isDisabled={this.state.isDisabled}
         >
-          <SafeAreaView>
+          <SafeAreaView style={styles.main}>
             <View style={styles.answerContainer}>
-              <Text style={styles.text}>vacation</Text>
+              <Text style={styles.text}>Stretch</Text>
               <Button
                 title={this.state.isDisabledOne ? "YES" : "NO"}
                 onPress={() =>
@@ -157,7 +149,7 @@ export default class App extends React.Component {
               />
             </View>
             <View style={styles.answerContainer}>
-              <Text style={styles.text}>massage</Text>
+              <Text style={styles.text}>Foam Roll</Text>
               <Button
                 title={this.state.isDisabledTwo ? "YES" : "NO"}
                 onPress={() =>
@@ -167,21 +159,9 @@ export default class App extends React.Component {
                 style={styles.btn}
               />
             </View>
-            <View style={styles.answerContainer}>
-              <Text style={styles.text}>workout</Text>
-              <Button
-                title={this.state.isDisabledThree ? "YES" : "NO"}
-                onPress={() =>
-                  this.setState({
-                    isDisabledThree: !this.state.isDisabledThree,
-                  })
-                }
-                color={Colors.primary}
-                style={styles.btn}
-              />
-            </View>
+
+            <BContent />
           </SafeAreaView>
-          <BContent />
         </Modal>
       </View>
     );
@@ -206,6 +186,11 @@ const styles = StyleSheet.create({
   text: {
     marginTop: 0,
     paddingRight: 30,
+  },
+  main: {
+    justifyContent: "center",
+    alignItems: "center",
+    top: 250,
   },
   answerContainer: {
     flexDirection: "row",
