@@ -1,16 +1,9 @@
-import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Modal,
-  Button,
-  SafeAreaView,
-} from "react-native";
+import React from "react";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 import { Colors } from "../colors/Colors";
 
-import { Calendar, CalendarList, Agenda } from "react-native-calendars";
+import { Calendar } from "react-native-calendars";
 import moment from "moment";
 
 const stretch = { key: "stretch", color: "red" };
@@ -18,154 +11,62 @@ const foamRoll = { key: "foamRoll", color: "blue" };
 
 const _format = "YYYY-MM-DD";
 const _today = moment(new Date().dateString).format(_format);
+const todaysDate = _today;
 
-export default class App extends React.Component {
-  initialState = {
-    [_today]: { disabled: false },
-  };
+const dates = {
+  todaysDate: { selected: true },
+  "2020-09-09": { selected: true },
+  "2020-09-10": { selected: true },
+  "2020-09-11": { selected: true },
+};
 
-  state = {
-    _markedDates: this.initialState,
-    isOpen: false,
-    isDisabledOne: false,
-    isDisabledTwo: false,
-    selectedDay: "",
-  };
+console.log(todaysDate);
 
-  onDaySelect = (day) => {
-    const _selectedDay = moment(day.dateString).format(_format);
-
-    this.setState({
-      selectedDay: _selectedDay,
-      isOpen: true,
-    });
-  };
-
-  saveDay = () => {
-    const dots = [];
-    let selected = true;
-    const {
-      isDisabledOne,
-      isDisabledTwo,
-      _markedDates,
-      selectedDay,
-    } = this.state;
-
-    if (isDisabledOne) {
-      dots.push(stretch);
-    }
-
-    if (isDisabledTwo) {
-      dots.push(foamRoll);
-    }
-
-    if (_markedDates[selectedDay]) {
-      selected = !_markedDates[selectedDay].selected;
-    }
-
-    const clone = { ..._markedDates };
-
-    clone[selectedDay] = { dots, selected };
-
-    this.setState({
-      isOpen: false,
-      _markedDates: clone,
-      isDisabledOne: false,
-      isDisabledTwo: false,
-    });
-  };
-
-  render() {
-    const BContent = () => (
-      <Button
-        title="X"
-        color="red"
-        onPress={this.saveDay}
-        style={[styles.btn, styles.btnModal]}
-      />
-    );
-
-    return (
-      <View style={styles.container}>
-        <Text style={styles.pageRef}>CALENDAR</Text>
-        <Calendar
-          markedDates={this.state._markedDates}
-          markingType={"multi-dot"}
-          onDayPress={this.onDaySelect}
-          theme={{
-            backgroundColor: "#ffffff",
-            calendarBackground: "#ffffff",
-            textSectionTitleColor: Colors.primaryFont,
-            textSectionTitleDisabledColor: "#d9e1e8",
-            selectedDayBackgroundColor: Colors.primary,
-            selectedDayTextColor: "#ffffff",
-            todayTextColor: Colors.primary,
-            dayTextColor: "#2d4150",
-            textDisabledColor: "#d9e1e8",
-            dotColor: "#00adf5",
-            selectedDotColor: "#ffffff",
-            arrowColor: Colors.primary,
-            disabledArrowColor: "#d9e1e8",
-            monthTextColor: Colors.primary,
-            indicatorColor: "blue",
-            textDayFontWeight: "300",
-            textMonthFontWeight: "bold",
-            textDayHeaderFontWeight: "300",
-            "stylesheet.calendar.header": {
-              dayHeader: {
-                width: 48,
-              },
+export default function CalendarScreen({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.pageRef}>CALENDAR</Text>
+      <View style={styles.filler}></View>
+      <Calendar
+        markedDates={dates}
+        markingType={"multi-dot"}
+        theme={{
+          backgroundColor: "#ffffff",
+          calendarBackground: "#ffffff",
+          textSectionTitleColor: Colors.primaryFont,
+          textSectionTitleDisabledColor: "#d9e1e8",
+          selectedDayBackgroundColor: Colors.primary,
+          selectedDayTextColor: "#ffffff",
+          todayTextColor: Colors.primary,
+          dayTextColor: "#2d4150",
+          textDisabledColor: "#d9e1e8",
+          dotColor: "#00adf5",
+          selectedDotColor: "#ffffff",
+          arrowColor: Colors.primary,
+          disabledArrowColor: "#d9e1e8",
+          monthTextColor: Colors.primary,
+          indicatorColor: "blue",
+          textDayFontWeight: "300",
+          textMonthFontWeight: "bold",
+          textDayHeaderFontWeight: "300",
+          "stylesheet.calendar.header": {
+            dayHeader: {
+              width: 48,
             },
-          }}
-        />
+          },
+        }}
+      />
 
-        <View style={styles.textSection}>
-          <Text style={styles.calendarSummary}>
-            When a workout is completed, your dates exercised will be marked on
-            the calendar. One study found that stretching 4 times per week
-            provided 82% greater flexibility improvements than stretching 2
-            times per week. It is not clear where the upper limit of frequency
-            benefits is, so the recommended frequency is therefore 3-7 days per
-            week.
-          </Text>
-        </View>
-
-        <Modal
-          style={[styles.modal, styles.modal3]}
-          position={"center"}
-          visible={this.state.isOpen}
-          isDisabled={this.state.isDisabled}
-        >
-          <SafeAreaView style={styles.main}>
-            <View style={styles.answerContainer}>
-              <Text style={styles.text}>Stretch</Text>
-              <Button
-                title={this.state.isDisabledOne ? "YES" : "NO"}
-                onPress={() =>
-                  this.setState({ isDisabledOne: !this.state.isDisabledOne })
-                }
-                color={Colors.primary}
-                style={styles.btn}
-              />
-            </View>
-            <View style={styles.answerContainer}>
-              <Text style={styles.text}>Foam Roll</Text>
-              <Button
-                title={this.state.isDisabledTwo ? "YES" : "NO"}
-                onPress={() =>
-                  this.setState({ isDisabledTwo: !this.state.isDisabledTwo })
-                }
-                color={Colors.primary}
-                style={styles.btn}
-              />
-            </View>
-
-            <BContent />
-          </SafeAreaView>
-        </Modal>
+      <View style={styles.textSection}>
+        <Text style={styles.calendarSummary}>
+          One study found that stretching 4 times per week provided 82% greater
+          flexibility improvements than stretching 2 times per week. It is not
+          clear where the upper limit of frequency benefits is, so the
+          recommended frequency is therefore 3-7 days per week.
+        </Text>
       </View>
-    );
-  }
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -173,7 +74,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
   },
   pageRef: {
     position: "absolute",
@@ -182,6 +82,9 @@ const styles = StyleSheet.create({
     color: "grey",
     fontSize: 10,
     zIndex: 4,
+  },
+  filler: {
+    marginTop: "20%",
   },
   text: {
     marginTop: 0,
@@ -211,5 +114,28 @@ const styles = StyleSheet.create({
     zIndex: 0,
     color: Colors.primaryFont,
     position: "absolute",
+  },
+  statContainer: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    paddingHorizontal: 20,
+    alignItems: "center",
+    flexDirection: "row",
+    width: 200,
+    height: 50,
+    backgroundColor: "white",
+    borderWidth: 1,
+    borderColor: "#eeeeee",
+    marginTop: "20%",
+    marginBottom: "10%",
+
+    // add shadows for iOS only
+    shadowOffset: { width: 0.5, height: 0.5 },
+    shadowOpacity: 0.26,
+    shadowColor: "black",
+
+    // add shadows for Android only
+    // No options for shadow color, shadow offset, shadow opacity like iOS
+    elevation: 8,
   },
 });

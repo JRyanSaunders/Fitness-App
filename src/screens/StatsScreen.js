@@ -19,7 +19,8 @@ export default function StatsScreen() {
 
   const save = async () => {
     try {
-      await AsyncStorage.setItem("MyExerciseCount", exerciseCount);
+      await AsyncStorage.setItem("MyExerciseCount", exerciseCount.toString());
+      // console.log("saving...");
       //await AsyncStorage.setItem("MyWorkoutCount", workoutCount);
     } catch (err) {
       alert(err);
@@ -54,8 +55,11 @@ export default function StatsScreen() {
 
   useEffect(() => {
     load();
-    //save();
   }, []);
+
+  useEffect(() => {
+    save();
+  }, [exerciseCount]);
 
   return (
     <View style={styles.container}>

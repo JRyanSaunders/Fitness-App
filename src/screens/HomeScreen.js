@@ -15,7 +15,9 @@ export default function HomeScreen({ navigation }) {
           style={styles.timerDefault}
           onPress={() => navigation.navigate("WorkoutScreen")}
         >
-          <Button title="START WORKOUT" color={Colors.primary} />
+          <Text color={Colors.primary} style={styles.callToAction}>
+            START WORKOUT
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.statContainer}
@@ -53,7 +55,9 @@ const styles = StyleSheet.create({
   },
   callToAction: {
     color: Colors.primary,
-    fontSize: 24,
+    fontSize: 22,
+    width: "50%",
+    textAlign: "center",
   },
   statContainer: {
     flexDirection: "row",
@@ -89,10 +93,12 @@ const styles = StyleSheet.create({
     borderColor: "#eeeeee",
     marginHorizontal: 5,
     marginVertical: 60,
+
     // add shadows for iOS only
     shadowOffset: { width: 0.5, height: 0.5 },
     shadowOpacity: 0.26,
     shadowColor: "black",
+
     // add shadows for Android only
     // No options for shadow color, shadow offset, shadow opacity like iOS
     elevation: 8,

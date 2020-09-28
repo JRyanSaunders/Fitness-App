@@ -23,6 +23,7 @@ export default function WorkoutTimer() {
 
   const [exerciseCount, setExerciseCount] = useContext(ExerciseContext);
   //const [workoutCount, setWorkoutCount] = useContext(ExerciseContext);
+  const [isComplete, setIsComplete] = useContext(ExerciseContext);
 
   const exercise = new Array(21);
   exercise[1] = require("../../assets/images/FR1.png");
@@ -66,9 +67,9 @@ export default function WorkoutTimer() {
       <View style={styles.timerCont}>
         <CountdownCircleTimer
           isPlaying={isPlaying}
-          duration={2}
+          duration={20}
           size={240}
-          colors={"#7B4FFF"}
+          colors={Colors.primary}
           key={key}
           //renderTime={renderTime}
           onComplete={() => {
@@ -87,10 +88,10 @@ export default function WorkoutTimer() {
                       onPress: () => console.log("okay"),
                     },
                   ],
-                  { cancelable: false }
+                  { cancelable: true }
                 );
 
-              return [false, 0], createTwoButtonAlert();
+              return [false, 0], createTwoButtonAlert(), setIsComplete(true);
             }
             if (count === 21) {
               return <Text style={styles.complete}>Too late...</Text>;
@@ -121,7 +122,7 @@ export default function WorkoutTimer() {
                 >
                   {remainingTime}
                 </Animated.Text>
-                <Text style={styles.value}>seconds</Text>
+                <Text style={styles.value}>SECONDS</Text>
                 <View style={styles.control}>
                   <TouchableOpacity
                     style={styles.skipButton}
@@ -189,11 +190,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   value: {
-    fontSize: 20,
+    fontSize: 17,
     color: Colors.primary,
     position: "absolute",
-    marginTop: 65,
-    marginLeft: 60,
+    marginTop: 68,
+    marginLeft: 58,
   },
   timeOutside: {
     bottom: 11,

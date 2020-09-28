@@ -27,10 +27,7 @@ export default function SettingsScreen() {
           This application is still in early development, let us know what you
           would like to see on this app!
         </Text>
-        <Text style={styles.underDev}>
-          Features in this screen are currently in development, let us know what
-          you would like to see in these settings!
-        </Text>
+        <Text style={styles.lockDescBold}>Remind me to workout every day</Text>
         <View style={styles.row}>
           <Text style={{ fontSize: 16, color: Colors.primaryFont }}>
             Show Notifications
@@ -44,37 +41,8 @@ export default function SettingsScreen() {
             style={{ marginLeft: 16 }}
           />
         </View>
-        <Text style={styles.lockDesc}>
-          Recieve workout reminders and notifications straight to your phone!
-          Notifications are set on by default
-        </Text>
+
         <Text style={styles.underDev}>(In development)</Text>
-        <View style={styles.row}>
-          <Text style={{ fontSize: 16, color: Colors.primaryFont }}>
-            Auto-Lock Display
-          </Text>
-          <Switch
-            trackColor={{ false: "#767577", true: Colors.primary }}
-            thumbColor={isLockEnabled ? "#ffffff" : "#f4f3f4"}
-            ios_backgroundColor="#3e3e3e"
-            onValueChange={toggleLockSwitch}
-            value={isLockEnabled}
-            style={{ marginLeft: 16 }}
-          />
-        </View>
-        <Text style={styles.lockDesc}>
-          Keeping your phone from going to sleep during workouts consumes more
-          battery, but it saves you from unlocking your phone between sets
-        </Text>
-        <Text style={styles.underDev}>(In development)</Text>
-        <Button
-          containerStyle={styles.restoreButtonContainer}
-          buttonStyle={{
-            padding: 6,
-            backgroundColor: Colors.secondary,
-          }}
-          title="Restore Defaults"
-        />
       </View>
       <View style={styles.ratingSection}>
         <Text style={styles.rateDesc}>
@@ -192,6 +160,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     zIndex: 0,
     color: Colors.primaryFont,
+  },
+  lockDescBold: {
+    fontSize: 12,
+    width: "100%",
+    paddingHorizontal: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 0,
+    color: Colors.primaryFont,
+    fontWeight: "500",
+    marginTop: 10,
   },
   ratingSection: {
     alignItems: "center",
