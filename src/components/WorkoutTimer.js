@@ -19,7 +19,8 @@ export default function WorkoutTimer() {
   const [count, setCount] = useState(1);
   const [key, setKey] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [disabled, setDisabled] = useState(false);
+  const [disabledBack, setDisabledBack] = useState(false);
+  const [disabledSkip, setDisabledSkip] = useState(false);
 
   const [exerciseCount, setExerciseCount] = useContext(ExerciseContext);
   //const [workoutCount, setWorkoutCount] = useContext(ExerciseContext);
@@ -52,8 +53,13 @@ export default function WorkoutTimer() {
     setCount((prevState) => prevState + 1), setKey((prevKey) => prevKey + 1);
   };
 
+  const onPressBack = () => {
+    setCount((prevState) => prevState - 1), setKey((prevKey) => prevKey - 1);
+  };
+
   useEffect(() => {
-    if (count >= 21) setDisabled(true);
+    if (count <= 0) setDisabledBack(true);
+    if (count >= 21) setDisabledSkip(true);
   }, [count]);
 
   // const renderTime = () => {
@@ -125,14 +131,17 @@ export default function WorkoutTimer() {
                 <Text style={styles.value}>SECONDS</Text>
                 <View style={styles.control}>
                   <TouchableOpacity
-                    style={styles.skipButton}
-                    onPress={onPressSkip}
-                    disabled={disabled}
+                    style={styles.backButton}
+                    onPress={onPressBack}
+                    disabled={disabledBack}
                   >
-                    <Text style={styles.skipText}>Skip</Text>
+                    <AntDesign
+                      name="leftcircleo"
+                      size={30}
+                      color={Colors.primary}
+                    />
                   </TouchableOpacity>
                   <TouchableOpacity
-                    title="Play / Pause"
                     onPress={() => setIsPlaying((prev) => !prev)}
                     color={Colors.primary}
                     style={styles.toggleTimer}
@@ -140,16 +149,27 @@ export default function WorkoutTimer() {
                     {isPlaying ? (
                       <AntDesign
                         name="pausecircleo"
-                        size={24}
+                        size={56}
                         color={Colors.primary}
                       />
                     ) : (
                       <AntDesign
                         name="playcircleo"
-                        size={24}
+                        size={56}
                         color={Colors.primary}
                       />
                     )}
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={styles.forwardButton}
+                    onPress={onPressSkip}
+                    disabled={disabledSkip}
+                  >
+                    <AntDesign
+                      name="rightcircleo"
+                      size={30}
+                      color={Colors.primary}
+                    />
                   </TouchableOpacity>
                 </View>
               </View>
@@ -201,28 +221,10 @@ const styles = StyleSheet.create({
   },
   control: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "center",
     alignItems: "center",
     position: "absolute",
     marginTop: 110,
-  },
-  skipButton: {
-    fontSize: 20,
-    color: Colors.primary,
-    borderWidth: 1,
-    borderColor: Colors.primary,
-    borderRadius: 10,
-    padding: 5,
-    marginLeft: 45,
-  },
-  skipText: {
-    color: Colors.primary,
-  },
-  toggleTimer: {
-    flexDirection: "row",
-    fontSize: 20,
-    color: Colors.primary,
-    marginLeft: 10,
   },
   timerOver: {
     justifyContent: "center",
@@ -241,5 +243,25 @@ const styles = StyleSheet.create({
     color: Colors.primary,
     justifyContent: "center",
     position: "absolute",
+  },
+  toggleTimer: {
+    flexDirection: "row",
+    fontSize: 20,
+    color: Colors.primary,
+    marginLeft: 15,
+  },
+  backButton: {
+    flexDirection: "row",
+    fontSize: 20,
+    color: Colors.primary,
+    marginLeft: 10,
+    marginLeft: 15,
+  },
+  forwardButton: {
+    flexDirection: "row",
+    fontSize: 20,
+    color: Colors.primary,
+    marginLeft: 10,
+    marginLeft: 15,
   },
 });
