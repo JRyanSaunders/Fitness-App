@@ -51,13 +51,17 @@ export default function WorkoutTimer() {
 
   const onPressSkip = () => {
     if (count < 21) {
-      setCount((prevState) => prevState + 1), setKey((prevKey) => prevKey + 1);
+      setDisabledSkip(false),
+        setCount((prevState) => prevState + 1),
+        setKey((prevKey) => prevKey + 1);
     }
   };
 
   const onPressBack = () => {
     if (count > 1) {
-      setCount((prevState) => prevState - 1), setKey((prevKey) => prevKey + 1);
+      setDisabledBack(false),
+        setCount((prevState) => prevState - 1),
+        setKey((prevKey) => prevKey + 1);
     }
   };
 
