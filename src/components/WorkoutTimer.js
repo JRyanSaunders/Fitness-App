@@ -50,23 +50,25 @@ export default function WorkoutTimer() {
   exercise[21] = require("../../assets/images/S13.png");
 
   const onPressSkip = () => {
-    setCount((prevState) => prevState + 1), setKey((prevKey) => prevKey + 1);
+    if (count < 21) {
+      setCount((prevState) => prevState + 1), setKey((prevKey) => prevKey + 1);
+    }
   };
 
   const onPressBack = () => {
-    setCount((prevState) => prevState - 1), setKey((prevKey) => prevKey - 1);
+    if (count > 1) {
+      setCount((prevState) => prevState - 1), setKey((prevKey) => prevKey + 1);
+    }
   };
 
   useEffect(() => {
-    if (count <= 0) setDisabledBack(true);
-    if (count >= 21) setDisabledSkip(true);
+    if (count <= 1) {
+      setDisabledBack(true);
+    }
+    if (count >= 21) {
+      setDisabledSkip(true);
+    }
   }, [count]);
-
-  // const renderTime = () => {
-  //   if (remainingTime === 0 && count >= 21) {
-  //     return <Text style={styles.timerOver}>Too Late...</Text>;
-  //   }
-  // };
 
   return (
     <View style={styles.container}>
@@ -77,11 +79,9 @@ export default function WorkoutTimer() {
           size={240}
           colors={Colors.primary}
           key={key}
-          //renderTime={renderTime}
           onComplete={() => {
             setCount((prevState) => prevState + 1);
             setExerciseCount((prevState) => prevState + 1);
-
             if (count >= 21) {
               //setWorkoutCount((prevState) => prevState + 1);
               const createTwoButtonAlert = () =>
@@ -96,13 +96,8 @@ export default function WorkoutTimer() {
                   ],
                   { cancelable: true }
                 );
-
               return [false, 0], createTwoButtonAlert(), setIsComplete(true);
             }
-            if (count === 21) {
-              return <Text style={styles.complete}>Too late...</Text>;
-            }
-
             return [true, 0];
           }}
         >
@@ -115,7 +110,6 @@ export default function WorkoutTimer() {
                   height: 150,
                 }}
               />
-
               <View style={styles.timeOutside}>
                 <Animated.Text
                   style={{
@@ -180,8 +174,6 @@ export default function WorkoutTimer() {
     </View>
   );
 }
-
-// return <p>{countRef.current}</p>
 
 const styles = StyleSheet.create({
   container: {
@@ -248,20 +240,20 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     fontSize: 20,
     color: Colors.primary,
-    marginLeft: 15,
+    marginLeft: 13,
   },
   backButton: {
     flexDirection: "row",
     fontSize: 20,
     color: Colors.primary,
     marginLeft: 10,
-    marginLeft: 15,
+    marginLeft: 13,
   },
   forwardButton: {
     flexDirection: "row",
     fontSize: 20,
     color: Colors.primary,
     marginLeft: 10,
-    marginLeft: 15,
+    marginLeft: 13,
   },
 });

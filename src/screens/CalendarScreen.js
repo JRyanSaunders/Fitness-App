@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 
 import { Colors } from "../colors/Colors";
 
@@ -56,15 +56,17 @@ export default function CalendarScreen({ navigation }) {
           },
         }}
       />
-
-      <View style={styles.textSection}>
-        <Text style={styles.calendarSummary}>
-          One study found that stretching 4 times per week provided 82% greater
-          flexibility improvements than stretching 2 times per week. It is not
-          clear where the upper limit of frequency benefits is, so the
-          recommended frequency is therefore 3-7 days per week.
-        </Text>
-      </View>
+      <Image
+        source={require("../../assets/calendar.png")}
+        style={{ width: "100%", height: 200, marginBottom: 5 }}
+        resizeMode="contain"
+      />
+      <Text style={styles.calendarSummary}>
+        One study found that stretching 4 times per week provided 82% greater
+        flexibility improvements than stretching 2 times per week. It is not
+        clear where the upper limit of frequency benefits is, so the recommended
+        frequency is therefore 3-7 days per week.
+      </Text>
     </View>
   );
 }
@@ -84,7 +86,7 @@ const styles = StyleSheet.create({
     zIndex: 4,
   },
   filler: {
-    marginTop: "20%",
+    marginTop: "15%",
   },
   text: {
     marginTop: 0,
@@ -100,20 +102,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  textSection: {
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    top: 60,
-  },
   calendarSummary: {
     fontSize: 9,
-    paddingHorizontal: 5,
+    paddingHorizontal: 40,
     justifyContent: "center",
     alignItems: "center",
     zIndex: 0,
     color: Colors.primaryFont,
-    position: "absolute",
+    textAlign: "center",
   },
   statContainer: {
     flexDirection: "row",
