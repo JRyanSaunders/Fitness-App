@@ -1,5 +1,5 @@
-import React, { useState, useContext, useMemo } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -20,6 +20,9 @@ import WorkoutScreen from "./src/screens/WorkoutScreen";
 import StatsScreen from "./src/screens/StatsScreen";
 import ExercisesScreen_S from "./src/screens/ExercisesScreen_S";
 import { ExerciseProvider } from "./src/components/ExerciseContext";
+
+import TermsOfUseScreen from "./src/screens/TermsOfUseScreen";
+import PrivacyPolicyScreen from "./src/screens/PrivacyPolicyScreen";
 
 const getFonts = () =>
   Font.loadAsync({
@@ -70,7 +73,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Settings"
-        component={SettingsScreen}
+        component={NestedSettings}
         options={{
           tabBarLabel: "Settings",
           tabBarIcon: ({ color, size }) => (
@@ -106,6 +109,40 @@ const Nested = () => {
         component={StatsScreen}
         options={{
           title: "Statistics",
+          headerStyle: {
+            backgroundColor: Colors.primary,
+          },
+          headerTintColor: "#fff",
+        }}
+      />
+    </NestedStack.Navigator>
+  );
+};
+
+const NestedSettings = () => {
+  return (
+    <NestedStack.Navigator>
+      <NestedStack.Screen
+        options={{ headerShown: false, title: "Back" }}
+        name="SettingsScreen"
+        component={SettingsScreen}
+      />
+      <NestedStack.Screen
+        name="TermsOfUseScreen"
+        component={TermsOfUseScreen}
+        options={{
+          title: "Terms of Use",
+          headerStyle: {
+            backgroundColor: Colors.primary,
+          },
+          headerTintColor: "#fff",
+        }}
+      />
+      <NestedStack.Screen
+        name="PrivacyPolicyScreen"
+        component={PrivacyPolicyScreen}
+        options={{
+          title: "Privacy Policy",
           headerStyle: {
             backgroundColor: Colors.primary,
           },

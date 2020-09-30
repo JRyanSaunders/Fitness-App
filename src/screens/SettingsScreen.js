@@ -4,16 +4,13 @@ import { Text, Button } from "react-native-elements";
 
 import { Colors } from "../colors/Colors";
 import { Permissions, Notifications } from "expo";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function SettingsScreen() {
+export default function SettingsScreen({ navigation }) {
   const [isNotifEnabled, setIsNotifEnabled] = useState(true);
-  const [isLockEnabled, setIsLockEnabled] = useState(true);
 
   const toggleNotifSwitch = () =>
     setIsNotifEnabled((previousState) => !previousState);
-
-  const toggleLockSwitch = () =>
-    setIsLockEnabled((previousState) => !previousState);
 
   return (
     <View style={styles.container}>
@@ -41,8 +38,32 @@ export default function SettingsScreen() {
             style={{ marginLeft: 16 }}
           />
         </View>
-
-        <Text style={styles.underDev}>(In development)</Text>
+        <View style={styles.divider}></View>
+        <TouchableOpacity
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            paddingVertical: 5,
+          }}
+          onPress={() => navigation.navigate("PrivacyPolicyScreen")}
+        >
+          <Text style={{ color: Colors.primary, fontWeight: "bold" }}>
+            Privacy Policy
+          </Text>
+        </TouchableOpacity>
+        <View style={styles.divider}></View>
+        <TouchableOpacity
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            paddingVertical: 5,
+          }}
+          onPress={() => navigation.navigate("TermsOfUseScreen")}
+        >
+          <Text style={{ color: Colors.primary, fontWeight: "bold" }}>
+            Terms of Use
+          </Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.ratingSection}>
         <Text style={styles.rateDesc}>
@@ -130,6 +151,7 @@ const styles = StyleSheet.create({
     paddingRight: 26.3,
     borderRadius: 10,
     top: 175,
+    alignItems: "center",
   },
   title: {
     fontSize: 24,
@@ -192,14 +214,10 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
     padding: 10,
   },
-  underDev: {
-    paddingTop: 2,
-    color: "red",
-    fontSize: 9,
-    width: "100%",
-    paddingHorizontal: 5,
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 0,
+  divider: {
+    borderBottomWidth: 1,
+    borderColor: Colors.greyLight,
+    width: "90%",
+    marginVertical: 10,
   },
 });

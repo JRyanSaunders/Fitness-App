@@ -13,7 +13,6 @@ import { CountdownCircleTimer } from "react-native-countdown-circle-timer";
 import { AntDesign } from "@expo/vector-icons";
 import { Colors } from "../colors/Colors";
 import { ExerciseContext } from "../components/ExerciseContext";
-import { useNavigation } from "@react-navigation/native";
 
 export default function WorkoutTimer() {
   const [count, setCount] = useState(1);
@@ -51,35 +50,24 @@ export default function WorkoutTimer() {
 
   const onPressSkip = () => {
     if (count < 21) {
-      setDisabledSkip(false),
-        setCount((prevState) => prevState + 1),
-        setKey((prevKey) => prevKey + 1);
+      setCount((prevState) => prevState + 1);
+      setKey((prevKey) => prevKey + 1);
     }
   };
 
   const onPressBack = () => {
     if (count > 1) {
-      setDisabledBack(false),
-        setCount((prevState) => prevState - 1),
-        setKey((prevKey) => prevKey + 1);
+      setCount((prevState) => prevState - 1);
+      setKey((prevKey) => prevKey + 1);
     }
   };
-
-  useEffect(() => {
-    if (count <= 1) {
-      setDisabledBack(true);
-    }
-    if (count >= 21) {
-      setDisabledSkip(true);
-    }
-  }, [count]);
 
   return (
     <View style={styles.container}>
       <View style={styles.timerCont}>
         <CountdownCircleTimer
           isPlaying={isPlaying}
-          duration={20}
+          duration={2}
           size={240}
           colors={Colors.primary}
           key={key}
@@ -131,7 +119,7 @@ export default function WorkoutTimer() {
                   <TouchableOpacity
                     style={styles.backButton}
                     onPress={onPressBack}
-                    disabled={disabledBack}
+                    disabled={count === 1}
                   >
                     <AntDesign
                       name="leftcircleo"
@@ -161,7 +149,7 @@ export default function WorkoutTimer() {
                   <TouchableOpacity
                     style={styles.forwardButton}
                     onPress={onPressSkip}
-                    disabled={disabledSkip}
+                    disabled={count === 21}
                   >
                     <AntDesign
                       name="rightcircleo"

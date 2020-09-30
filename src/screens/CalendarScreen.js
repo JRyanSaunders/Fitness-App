@@ -6,9 +6,6 @@ import { Colors } from "../colors/Colors";
 import { Calendar } from "react-native-calendars";
 import moment from "moment";
 
-const stretch = { key: "stretch", color: "red" };
-const foamRoll = { key: "foamRoll", color: "blue" };
-
 const _format = "YYYY-MM-DD";
 const _today = moment(new Date().dateString).format(_format);
 const todaysDate = _today;
