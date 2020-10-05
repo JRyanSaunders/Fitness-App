@@ -21,7 +21,6 @@ export default function WorkoutTimer() {
 
   const [exerciseCount, setExerciseCount] = useContext(ExerciseContext);
   const [workoutCount, setWorkoutCount] = useContext(ExerciseContext);
-  const [isComplete, setIsComplete] = useContext(ExerciseContext);
 
   const exercise = new Array(21);
   exercise[1] = require("../../assets/images/FR1.png");

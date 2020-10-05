@@ -6,50 +6,33 @@ import { Colors } from "../colors/Colors";
 import { Calendar } from "react-native-calendars";
 import moment from "moment";
 
-const _format = "YYYY-MM-DD";
-const _today = moment(new Date().dateString).format(_format);
-
-const data = [];
-
-data[0] = { ID: "1", "2020-10-08": { selected: true } };
-data[1] = { ID: "2", _today: { selected: true } };
-
-var tempData = [];
-
-for (var index = 0; index < data.length; index++) {
-  if (data[index]._today.selected == "true") {
-    tempData.push(data);
-  }
-}
-
-data = tempData;
-
-// const dates = {
-//   _today: { selected: true },
-//   "2020-10-08": { selected: true },
+// let markedDates = {
+//   "2012-05-16": { selected: true, marked: true, selectedColor: "blue" },
+//   "2012-05-17": { marked: true },
+//   "2012-05-18": { marked: true, dotColor: "red", activeOpacity: 0 },
+//   "2012-05-19": { disabled: true, disableTouchEvent: true },
 // };
 
-// console.log(_today);
+// console.log("Dates: ", markedDates);
+
+// markedDates = { ...markedDates, "2012-05-20": { selected: true, marked: true, selectedColor: "blue" } };
+
+// console.log("NewDates: ", markedDates);
 
 export default function CalendarScreen() {
-  const [isComplete, setIsComplete] = useContext(ExerciseContext);
-  const newDate = dates._today.selected;
+  const [selectedDates, setSelectedDates] = useContext(ExerciseContext);
 
-  if (isComplete === true && newDate === true) {
-    return;
-  } else if (isComplete === true) {
-    newDate = true;
-  }
+  const _format = "YYYY-MM-DD";
+  const _today = moment(new Date().dateString).format(_format);
 
-  //what I want to do: Push a new property into the dates object that takes in todays date and
-  //set it to true and will continue to do it for upcoming days and then save it using async.
-
+  // [_today]: { selected: true },
+  // "2020-10-08": { selected: true },
   return (
     <View style={styles.container}>
       <Text style={styles.pageRef}>CALENDAR</Text>
       <View style={styles.filler}></View>
       <Calendar
-        markedDates={dates}
+        markedDates={selectedDates.dates.completedDates}
         markingType={"multi-dot"}
         theme={{
           backgroundColor: "#ffffff",
