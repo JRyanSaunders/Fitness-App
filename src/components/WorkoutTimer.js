@@ -18,11 +18,9 @@ export default function WorkoutTimer() {
   const [count, setCount] = useState(1);
   const [key, setKey] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [disabledBack, setDisabledBack] = useState(false);
-  const [disabledSkip, setDisabledSkip] = useState(false);
 
   const [exerciseCount, setExerciseCount] = useContext(ExerciseContext);
-  //const [workoutCount, setWorkoutCount] = useContext(ExerciseContext);
+  const [workoutCount, setWorkoutCount] = useContext(ExerciseContext);
   const [isComplete, setIsComplete] = useContext(ExerciseContext);
 
   const exercise = new Array(21);
@@ -75,7 +73,8 @@ export default function WorkoutTimer() {
             setCount((prevState) => prevState + 1);
             setExerciseCount((prevState) => prevState + 1);
             if (count >= 21) {
-              //setWorkoutCount((prevState) => prevState + 1);
+              setWorkoutCount((prevState) => prevState + 1);
+              setIsComplete(true);
               const createTwoButtonAlert = () =>
                 Alert.alert(
                   "Workout Complete!",

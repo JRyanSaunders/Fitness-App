@@ -11,17 +11,18 @@ import { ExerciseContext } from "../components/ExerciseContext";
 
 import { AntDesign } from "@expo/vector-icons";
 import { Colors } from "../colors/Colors";
-//import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function StatsScreen() {
   const [exerciseCount, setExerciseCount] = useContext(ExerciseContext);
-  //const [workoutCount, setWorkoutCount] = useContext(ExerciseContext);
+  const [workoutCount, setWorkoutCount] = useContext(ExerciseContext);
+
+  // Why is this not saving or updating! grrrr, driving me crazy!
 
   const save = async () => {
     try {
       await AsyncStorage.setItem("MyExerciseCount", exerciseCount.toString());
-      // console.log("saving...");
-      //await AsyncStorage.setItem("MyWorkoutCount", workoutCount);
+      console.log("saving...");
+      await AsyncStorage.setItem("MyWorkoutCount", workoutCount.toString());
     } catch (err) {
       alert(err);
     }
@@ -30,14 +31,14 @@ export default function StatsScreen() {
   const load = async () => {
     try {
       let exerciseCount = await AsyncStorage.getItem("MyExerciseCount");
-      //let workoutCount = await AsyncStorage.getItem("MyWorkoutCount");
+      let workoutCount = await AsyncStorage.getItem("MyWorkoutCount");
 
       if (exerciseCount !== null) {
         setExerciseCount(exerciseCount);
       }
-      // if (workoutCount !== null) {
-      //   setWorkoutCount(workoutCount);
-      // }
+      if (workoutCount !== null) {
+        setWorkoutCount(workoutCount);
+      }
     } catch (err) {
       alert(err);
     }
@@ -59,7 +60,7 @@ export default function StatsScreen() {
 
   useEffect(() => {
     save();
-  }, [exerciseCount]);
+  }, [exerciseCount, workoutCount]);
 
   return (
     <View style={styles.container}>

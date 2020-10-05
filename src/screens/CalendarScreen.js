@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-
+import { ExerciseContext } from "../components/ExerciseContext";
 import { Colors } from "../colors/Colors";
 
 import { Calendar } from "react-native-calendars";
@@ -8,18 +8,42 @@ import moment from "moment";
 
 const _format = "YYYY-MM-DD";
 const _today = moment(new Date().dateString).format(_format);
-const todaysDate = _today;
 
-const dates = {
-  todaysDate: { selected: true },
-  "2020-09-09": { selected: true },
-  "2020-09-10": { selected: true },
-  "2020-09-11": { selected: true },
-};
+const data = [];
 
-console.log(todaysDate);
+data[0] = { ID: "1", "2020-10-08": { selected: true } };
+data[1] = { ID: "2", _today: { selected: true } };
 
-export default function CalendarScreen({ navigation }) {
+var tempData = [];
+
+for (var index = 0; index < data.length; index++) {
+  if (data[index]._today.selected == "true") {
+    tempData.push(data);
+  }
+}
+
+data = tempData;
+
+// const dates = {
+//   _today: { selected: true },
+//   "2020-10-08": { selected: true },
+// };
+
+// console.log(_today);
+
+export default function CalendarScreen() {
+  const [isComplete, setIsComplete] = useContext(ExerciseContext);
+  const newDate = dates._today.selected;
+
+  if (isComplete === true && newDate === true) {
+    return;
+  } else if (isComplete === true) {
+    newDate = true;
+  }
+
+  //what I want to do: Push a new property into the dates object that takes in todays date and
+  //set it to true and will continue to do it for upcoming days and then save it using async.
+
   return (
     <View style={styles.container}>
       <Text style={styles.pageRef}>CALENDAR</Text>
