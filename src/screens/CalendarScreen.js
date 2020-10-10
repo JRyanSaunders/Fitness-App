@@ -4,7 +4,6 @@ import { ExerciseContext } from "../components/ExerciseContext";
 import { Colors } from "../colors/Colors";
 
 import { Calendar } from "react-native-calendars";
-import moment from "moment";
 
 // let markedDates = {
 //   "2012-05-16": { selected: true, marked: true, selectedColor: "blue" },
@@ -20,10 +19,7 @@ import moment from "moment";
 // console.log("NewDates: ", markedDates);
 
 export default function CalendarScreen() {
-  const [selectedDates, setSelectedDates] = useContext(ExerciseContext);
-
-  const _format = "YYYY-MM-DD";
-  const _today = moment(new Date().dateString).format(_format);
+  const [exercise, setExercise] = useContext(ExerciseContext);
 
   // [_today]: { selected: true },
   // "2020-10-08": { selected: true },
@@ -32,7 +28,7 @@ export default function CalendarScreen() {
       <Text style={styles.pageRef}>CALENDAR</Text>
       <View style={styles.filler}></View>
       <Calendar
-        markedDates={selectedDates.dates.completedDates}
+        markedDates={exercise.completedDates}
         markingType={"multi-dot"}
         theme={{
           backgroundColor: "#ffffff",

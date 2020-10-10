@@ -16,6 +16,8 @@
     "@react-navigation/stack": "^5.9.0",
     "expo": "~38.0.8",
     "expo-status-bar": "^1.0.2",
+    "git": "^0.1.5",
+    "gt": "^0.10.0",
     "moment": "^2.27.0",
     "native-base": "^2.13.14",
     "react": "~16.11.0",

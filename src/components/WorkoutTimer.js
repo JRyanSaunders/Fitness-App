@@ -13,14 +13,17 @@ import { CountdownCircleTimer } from "react-native-countdown-circle-timer";
 import { AntDesign } from "@expo/vector-icons";
 import { Colors } from "../colors/Colors";
 import { ExerciseContext } from "../components/ExerciseContext";
+import moment from "moment";
 
 export default function WorkoutTimer() {
   const [count, setCount] = useState(1);
   const [key, setKey] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
 
-  const [exerciseCount, setExerciseCount] = useContext(ExerciseContext);
-  const [workoutCount, setWorkoutCount] = useContext(ExerciseContext);
+  const [exerciseContext, setExerciseContext] = useContext(ExerciseContext);
+
+  const _format = "YYYY-MM-DD";
+  const _today = moment(new Date().dateString).format(_format);
 
   const exercise = new Array(21);
   exercise[1] = require("../../assets/images/FR1.png");
@@ -59,6 +62,10 @@ export default function WorkoutTimer() {
     }
   };
 
+  let date = {
+    [_today]: { selected: true },
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.timerCont}>
@@ -70,10 +77,29 @@ export default function WorkoutTimer() {
           key={key}
           onComplete={() => {
             setCount((prevState) => prevState + 1);
-            setExerciseCount((prevState) => prevState + 1);
+            setExerciseContext((prevState) => ({
+              ...prevState,
+              counts: {
+                exerciseCount: prevState.counts.exerciseCount + 1,
+                workoutCount: prevState.counts.workoutCount,
+              },
+            }));
             if (count >= 21) {
-              setWorkoutCount((prevState) => prevState + 1);
-              setIsComplete(true);
+              setExerciseContext((prevState) => ({
+                ...prevState,
+                counts: {
+                  workoutCount: prevState.counts.workoutCount + 1,
+                  exerciseCount: prevState.counts.exerciseCount,
+                },
+              }));
+              setExerciseContext((prevState) => ({
+                ...prevState,
+                completedDates: {
+                  ...prevState.completedDates,
+                  ...date,
+                },
+              }));
+              console.log(exerciseContext);
               const createTwoButtonAlert = () =>
                 Alert.alert(
                   "Workout Complete!",
@@ -86,7 +112,7 @@ export default function WorkoutTimer() {
                   ],
                   { cancelable: true }
                 );
-              return [false, 0], createTwoButtonAlert(), setIsComplete(true);
+              return [false, 0], createTwoButtonAlert();
             }
             return [true, 0];
           }}

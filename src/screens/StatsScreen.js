@@ -13,16 +13,19 @@ import { AntDesign } from "@expo/vector-icons";
 import { Colors } from "../colors/Colors";
 
 export default function StatsScreen() {
-  const [exerciseCount, setExerciseCount] = useContext(ExerciseContext);
-  const [workoutCount, setWorkoutCount] = useContext(ExerciseContext);
-
-  // Why is this not saving or updating! grrrr, driving me crazy!
+  const [exerciseContext, setExerciseContext] = useContext(ExerciseContext);
 
   const save = async () => {
     try {
-      await AsyncStorage.setItem("MyExerciseCount", exerciseCount.toString());
-      console.log("saving...");
-      await AsyncStorage.setItem("MyWorkoutCount", workoutCount.toString());
+      await AsyncStorage.setItem(
+        "MyExerciseCount",
+        exerciseContext.counts.exerciseCount.toString()
+      );
+      console.log(exerciseContext.counts.exerciseCount);
+      await AsyncStorage.setItem(
+        "MyWorkoutCount",
+        exerciseContext.counts.workoutCount.toString()
+      );
     } catch (err) {
       alert(err);
     }
@@ -33,34 +36,55 @@ export default function StatsScreen() {
       let exerciseCount = await AsyncStorage.getItem("MyExerciseCount");
       let workoutCount = await AsyncStorage.getItem("MyWorkoutCount");
 
-      if (exerciseCount !== null) {
-        setExerciseCount(exerciseCount);
-      }
-      if (workoutCount !== null) {
-        setWorkoutCount(workoutCount);
+      if (exerciseCount !== null && workoutCount !== null) {
+        setExerciseContext((prevState) => ({
+          ...prevState,
+          counts: {
+            workoutCount: JSON.parse(prevState.counts.workoutCount),
+            exerciseCount: JSON.parse(prevState.counts.exerciseCount),
+          },
+        }));
       }
     } catch (err) {
       alert(err);
     }
   };
 
-  const remove = async () => {
+  const removeExercise = async () => {
     try {
       await AsyncStorage.removeItem("MyExerciseCount");
     } catch (err) {
       alert(err);
     } finally {
-      setExerciseCount(0);
+      setExerciseContext((prevState) => ({
+        ...prevState,
+        counts: {
+          exerciseCount: 0,
+          workoutCount: prevState.counts.workoutCount,
+        },
+      }));
+    }
+  };
+
+  const removeWorkout = async () => {
+    try {
+      await AsyncStorage.removeItem("MyWorkoutCount");
+    } catch (err) {
+      alert(err);
+    } finally {
+      setExerciseContext((prevState) => ({
+        ...prevState,
+        counts: {
+          workoutCount: 0,
+          exerciseCount: prevState.counts.exerciseCount,
+        },
+      }));
     }
   };
 
   useEffect(() => {
-    load();
+    load()
   }, []);
-
-  useEffect(() => {
-    save();
-  }, [exerciseCount, workoutCount]);
 
   return (
     <View style={styles.container}>
@@ -77,11 +101,13 @@ export default function StatsScreen() {
           color="white"
         />
         <Text style={styles.headerOne}>Exercises Completed:</Text>
-        <Text style={styles.exerciseNumber}> {exerciseCount}</Text>
+        <Text style={styles.exerciseNumber}>
+          {exerciseContext.counts.exerciseCount.toString()}
+        </Text>
         <TouchableOpacity style={styles.save} onPress={() => save()}>
           <Text style={{ color: "white", fontWeight: "bold" }}>Save</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.remove} onPress={() => remove()}>
+        <TouchableOpacity style={styles.remove} onPress={() => removeExercise()}>
           <Text style={{ color: "white", fontWeight: "bold" }}>Restart</Text>
         </TouchableOpacity>
       </View>
@@ -94,14 +120,13 @@ export default function StatsScreen() {
           color="white"
         />
         <Text style={styles.headerOne}>Workouts Completed:</Text>
-        <Text style={styles.exerciseNumber}> {exerciseCount}</Text>
-        <TouchableOpacity style={styles.remove} onPress={() => remove()}>
+        <Text style={styles.exerciseNumber}>
+          {exerciseContext.counts.workoutCount.toString()}
+        </Text>
+        <TouchableOpacity style={styles.remove} onPress={() => removeWorkout()}>
           <Text style={{ color: "white", fontWeight: "bold" }}>Restart</Text>
         </TouchableOpacity>
       </View>
-      {/* <TouchableOpacity onPress={() => save()}>
-        <Text>Save</Text>
-      </TouchableOpacity> */}
     </View>
   );
 }
