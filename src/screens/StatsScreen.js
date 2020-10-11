@@ -40,8 +40,8 @@ export default function StatsScreen() {
         setExerciseContext((prevState) => ({
           ...prevState,
           counts: {
-            workoutCount: JSON.parse(prevState.counts.workoutCount),
-            exerciseCount: JSON.parse(prevState.counts.exerciseCount),
+            workoutCount: JSON.parse(workoutCount),
+            exerciseCount: JSON.parse(exerciseCount),
           },
         }));
       }
@@ -85,6 +85,10 @@ export default function StatsScreen() {
   useEffect(() => {
     load()
   }, []);
+
+  useEffect(() => {
+    save()
+  }, [exerciseContext]);
 
   return (
     <View style={styles.container}>
