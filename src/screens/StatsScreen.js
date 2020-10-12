@@ -86,10 +86,6 @@ export default function StatsScreen() {
     load()
   }, []);
 
-  useEffect(() => {
-    save()
-  }, [exerciseContext]);
-
   return (
     <View style={styles.container}>
       <Image

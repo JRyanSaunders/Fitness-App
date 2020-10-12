@@ -19,7 +19,7 @@ import { Calendar } from "react-native-calendars";
 // console.log("NewDates: ", markedDates);
 
 export default function CalendarScreen() {
-  // const [exerciseContext, setExerciseContext] = useContext(ExerciseContext);
+  const [exerciseContext, setExerciseContext] = useContext(ExerciseContext);
 
   // const save = async () => {
   //   try {
