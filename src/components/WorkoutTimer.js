@@ -66,6 +66,23 @@ export default function WorkoutTimer() {
     [_today]: { selected: true },
   };
 
+  useEffect(() => {
+    if (count >= 21) {
+      setExerciseContext((prevState) => ({
+        ...prevState,
+        counts: {
+          workoutCount: prevState.counts.workoutCount + 1,
+          exerciseCount: prevState.counts.exerciseCount,
+        },
+      }));
+      setExerciseContext((prevState) => ({
+        ...prevState,
+        completedDates: {
+          ...prevState.completedDates,
+          ...date,
+        },
+      })) }}, [count]);
+
   return (
     <View style={styles.container}>
       <View style={styles.timerCont}>
@@ -76,29 +93,22 @@ export default function WorkoutTimer() {
           colors={Colors.primary}
           key={key}
           onComplete={() => {
+            console.log("Before: ", count)
             setCount((prevState) => prevState + 1);
+            console.log("After: ", count)
             setExerciseContext((prevState) => ({
               ...prevState,
-              counts: {
-                exerciseCount: prevState.counts.exerciseCount + 1,
-                workoutCount: prevState.counts.workoutCount,
+              counts: 
+               {
+                workoutCount: (count >= 21) ? prevState.counts.workoutCount + 1 : prevState.counts.workoutCount,
+                exerciseCount: (count < 21) ? prevState.counts.exerciseCount + 1 : prevState.counts.exerciseCount,
               },
+              completedDates: {
+                ...prevState.completedDates,
+                ...date,
+              }, 
             }));
             if (count >= 21) {
-              setExerciseContext((prevState) => ({
-                ...prevState,
-                counts: {
-                  workoutCount: prevState.counts.workoutCount + 1,
-                  exerciseCount: prevState.counts.exerciseCount,
-                },
-              }));
-              setExerciseContext((prevState) => ({
-                ...prevState,
-                completedDates: {
-                  ...prevState.completedDates,
-                  ...date,
-                },
-              }));
               console.log(exerciseContext);
               const createTwoButtonAlert = () =>
                 Alert.alert(
