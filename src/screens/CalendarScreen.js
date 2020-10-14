@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { StyleSheet, Text, View, Image, AsyncStorage } from "react-native";
+import { StyleSheet, Text, View, Image, AsyncStorage, Button } from "react-native";
 import { ExerciseContext } from "../components/ExerciseContext";
 import { Colors } from "../colors/Colors";
 
@@ -25,13 +25,9 @@ export default function CalendarScreen() {
   //   try {
   //     await AsyncStorage.setItem(
   //       "MyCompletedDates",
-  //       exerciseContext.counts.exerciseCount.toString()
+  //       exerciseContext.completedDates.toString()
   //     );
-  //     console.log(exerciseContext.counts.exerciseCount);
-  //     await AsyncStorage.setItem(
-  //       "MyCompletedDates",
-  //       exerciseContext.counts.workoutCount.toString()
-  //     );
+  //     console.log(exerciseContext.completedDates);
   //   } catch (err) {
   //     alert(err);
   //   }
@@ -39,14 +35,12 @@ export default function CalendarScreen() {
 
   // const load = async () => {
   //   try {
-  //     let exerciseCount = await AsyncStorage.getItem("MyCompletedDates");
+  //     let completedDates = await AsyncStorage.getItem("MyCompletedDates");
 
-  //     if (exerciseCount !== null && workoutCount !== null) {
+  //     if (completedDates !== null) {
   //       setExerciseContext((prevState) => ({
   //         ...prevState,
-  //         counts: {
-  //           exerciseCount: JSON.parse(exerciseCount),
-  //         },
+  //         completedDates: JSON.parse(completedDates)
   //       }));
   //     }
   //   } catch (err) {
@@ -54,34 +48,15 @@ export default function CalendarScreen() {
   //   }
   // };
 
-  // const removeExercise = async () => {
+  // const remove = async () => {
   //   try {
-  //     await AsyncStorage.removeItem("MyExerciseCount");
+  //     await AsyncStorage.removeItem("MyCompletedDates");
   //   } catch (err) {
   //     alert(err);
   //   } finally {
   //     setExerciseContext((prevState) => ({
   //       ...prevState,
-  //       counts: {
-  //         exerciseCount: 0,
-  //         workoutCount: prevState.counts.workoutCount,
-  //       },
-  //     }));
-  //   }
-  // };
-
-  // const removeWorkout = async () => {
-  //   try {
-  //     await AsyncStorage.removeItem("MyWorkoutCount");
-  //   } catch (err) {
-  //     alert(err);
-  //   } finally {
-  //     setExerciseContext((prevState) => ({
-  //       ...prevState,
-  //       counts: {
-  //         workoutCount: 0,
-  //         exerciseCount: prevState.counts.exerciseCount,
-  //       },
+  //       completedDates: {},
   //     }));
   //   }
   // };
@@ -90,14 +65,12 @@ export default function CalendarScreen() {
   //   load()
   // }, []);
 
-  // useEffect(() => {
-  //   save()
-  // }, [exerciseContext]);
-
   return (
     <View style={styles.container}>
       <Text style={styles.pageRef}>CALENDAR</Text>
       <View style={styles.filler}></View>
+      {/* <Button title="save" onPress={save} style={{justifyContent: "center", alignItems: "center"}} />
+      <Button title="remove" onPress={remove} style={{justifyContent: "center", alignItems: "center"}} /> */}
       <Calendar
         markedDates={exerciseContext.completedDates}
         markingType={"multi-dot"}

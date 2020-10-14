@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -11,40 +11,46 @@ import { ExerciseContext } from "../components/ExerciseContext";
 
 import { AntDesign } from "@expo/vector-icons";
 import { Colors } from "../colors/Colors";
+// import * as FileSystem from 'expo-file-system';
 
 export default function StatsScreen() {
   const [exerciseContext, setExerciseContext] = useContext(ExerciseContext);
-
-  const save = async () => {
-    try {
-      await AsyncStorage.setItem(
-        "MyExerciseCount",
-        exerciseContext.counts.exerciseCount.toString()
-      );
-      console.log(exerciseContext.counts.exerciseCount);
-      await AsyncStorage.setItem(
-        "MyWorkoutCount",
-        exerciseContext.counts.workoutCount.toString()
-      );
-    } catch (err) {
-      alert(err);
-    }
-  };
+  const [exerciseCountState, setExerciseCountState] = useState();
 
   const load = async () => {
     try {
       let exerciseCount = await AsyncStorage.getItem("MyExerciseCount");
       let workoutCount = await AsyncStorage.getItem("MyWorkoutCount");
+      // let tmp = await FileSystem.getInfoAsync('file://StatsScreen.js');
+      // console.log(tmp);
 
       if (exerciseCount !== null && workoutCount !== null) {
-        setExerciseContext((prevState) => ({
-          ...prevState,
-          counts: {
-            workoutCount: JSON.parse(workoutCount),
-            exerciseCount: JSON.parse(exerciseCount),
-          },
-        }));
+        setExerciseCountState(exerciseContext.counts.exerciseCount)
+        // setExerciseContext((prevState) => ({
+        //   ...prevState,
+        //   counts: {
+        //     workoutCount: JSON.parse(workoutCount),
+        //     exerciseCount: JSON.parse(exerciseCount),
+        //   },
+        // }));
       }
+    } catch (err) {
+      alert(err);
+    }
+  };
+
+  const save = async () => {
+    try {
+      await AsyncStorage.setItem(
+        "MyExerciseCount",
+        exerciseCountState.toString()
+      );
+      // console.log(exerciseContext.counts.exerciseCount);
+      // await AsyncStorage.setItem(
+      //   "MyWorkoutCount",
+      //   exerciseContext.counts.workoutCount.toString()
+      // );
+    load()
     } catch (err) {
       alert(err);
     }
@@ -84,7 +90,7 @@ export default function StatsScreen() {
 
   useEffect(() => {
     load()
-  }, []);
+  }, [exerciseContext.counts]);
 
   return (
     <View style={styles.container}>
@@ -102,7 +108,7 @@ export default function StatsScreen() {
         />
         <Text style={styles.headerOne}>Exercises Completed:</Text>
         <Text style={styles.exerciseNumber}>
-          {exerciseContext.counts.exerciseCount.toString()}
+          {exerciseCountState}
         </Text>
         <TouchableOpacity style={styles.save} onPress={() => save()}>
           <Text style={{ color: "white", fontWeight: "bold" }}>Save</Text>
