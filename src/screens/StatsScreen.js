@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -15,7 +15,8 @@ import { Colors } from "../colors/Colors";
 
 export default function StatsScreen() {
   const [exerciseContext, setExerciseContext] = useContext(ExerciseContext);
-  const [exerciseCountState, setExerciseCountState] = useState();
+
+  console.log(module)
 
   const load = async () => {
     try {
@@ -25,14 +26,13 @@ export default function StatsScreen() {
       // console.log(tmp);
 
       if (exerciseCount !== null && workoutCount !== null) {
-        setExerciseCountState(exerciseContext.counts.exerciseCount)
-        // setExerciseContext((prevState) => ({
-        //   ...prevState,
-        //   counts: {
-        //     workoutCount: JSON.parse(workoutCount),
-        //     exerciseCount: JSON.parse(exerciseCount),
-        //   },
-        // }));
+        setExerciseContext((prevState) => ({
+          ...prevState,
+          counts: {
+            workoutCount: JSON.parse(workoutCount),
+            exerciseCount: JSON.parse(exerciseCount),
+          },
+        }));
       }
     } catch (err) {
       alert(err);
@@ -43,14 +43,13 @@ export default function StatsScreen() {
     try {
       await AsyncStorage.setItem(
         "MyExerciseCount",
-        exerciseCountState.toString()
+        exerciseContext.counts.exerciseCount.toString()
       );
-      // console.log(exerciseContext.counts.exerciseCount);
-      // await AsyncStorage.setItem(
-      //   "MyWorkoutCount",
-      //   exerciseContext.counts.workoutCount.toString()
-      // );
-    load()
+      console.log(exerciseContext.counts.exerciseCount);
+      await AsyncStorage.setItem(
+        "MyWorkoutCount",
+        exerciseContext.counts.workoutCount.toString()
+      );
     } catch (err) {
       alert(err);
     }
@@ -108,7 +107,7 @@ export default function StatsScreen() {
         />
         <Text style={styles.headerOne}>Exercises Completed:</Text>
         <Text style={styles.exerciseNumber}>
-          {exerciseCountState}
+          {exerciseContext.counts.exerciseCount.toString()}
         </Text>
         <TouchableOpacity style={styles.save} onPress={() => save()}>
           <Text style={{ color: "white", fontWeight: "bold" }}>Save</Text>
