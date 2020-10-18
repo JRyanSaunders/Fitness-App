@@ -105,7 +105,7 @@ export default function StatsScreen() {
         />
         <Text style={styles.headerOne}>Exercises Completed:</Text>
         <Text style={styles.exerciseNumber}>
-          {exerciseContext.counts.exerciseCount.toString()}
+          {JSON.stringify(exerciseContext.counts.exerciseCount)}
         </Text>
         <TouchableOpacity style={styles.save} onPress={() => save()}>
           <Text style={{ color: "white", fontWeight: "bold" }}>Save</Text>
@@ -124,7 +124,7 @@ export default function StatsScreen() {
         />
         <Text style={styles.headerOne}>Workouts Completed:</Text>
         <Text style={styles.exerciseNumber}>
-          {exerciseContext.counts.workoutCount.toString()}
+          {JSON.stringify(exerciseContext.counts.workoutCount)}
         </Text>
         <TouchableOpacity style={styles.remove} onPress={() => removeWorkout()}>
           <Text style={{ color: "white", fontWeight: "bold" }}>Restart</Text>
