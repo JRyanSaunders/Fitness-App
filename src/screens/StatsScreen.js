@@ -15,25 +15,6 @@ import { Colors } from "../colors/Colors";
 export default function StatsScreen() {
   const [exerciseContext, setExerciseContext] = useContext(ExerciseContext);
 
-  const load = async () => {
-    try {
-      let exerciseCount = await AsyncStorage.getItem("MyExerciseCount");
-      let workoutCount = await AsyncStorage.getItem("MyWorkoutCount");
-
-      if (exerciseCount !== null && workoutCount !== null) {
-        setExerciseContext((prevState) => ({
-          ...prevState,
-          counts: {
-            workoutCount: JSON.parse(workoutCount),
-            exerciseCount: JSON.parse(exerciseCount),
-          },
-        }));
-      }
-    } catch (err) {
-      alert(err);
-    }
-  };
-
   const save = async () => {
     try {
       const jsonExerciseValue = JSON.stringify(exerciseContext.counts.exerciseCount)
@@ -48,6 +29,25 @@ export default function StatsScreen() {
         "MyWorkoutCount",
         jsonWorkoutValue
       );
+    } catch (err) {
+      alert(err);
+    }
+  };
+
+  const load = async () => {
+    try {
+      let exerciseCount = await AsyncStorage.getItem("MyExerciseCount");
+      let workoutCount = await AsyncStorage.getItem("MyWorkoutCount");
+
+      if (exerciseCount !== null && workoutCount !== null) {
+        setExerciseContext((prevState) => ({
+          ...prevState,
+          counts: {
+            workoutCount: JSON.parse(workoutCount),
+            exerciseCount: JSON.parse(exerciseCount),
+          },
+        }));
+      }
     } catch (err) {
       alert(err);
     }
