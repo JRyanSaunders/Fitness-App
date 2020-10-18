@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 
 const ExerciseContext = createContext([{}, () => {}]);
 
@@ -15,6 +15,10 @@ const ExerciseProvider = (props) => {
       "2020-10-21": { selected: true },
     },
   });
+
+  useEffect(() => {
+    console.log("Count test: ", state.counts.exerciseCount);
+  })
 
   return (
     <ExerciseContext.Provider value={[state, setState]}>

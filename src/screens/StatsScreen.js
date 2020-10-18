@@ -87,7 +87,7 @@ export default function StatsScreen() {
 
   useEffect(() => {
     load()
-  }, [exerciseContext.counts]);
+  }, []);
 
   return (
     <View style={styles.container}>
