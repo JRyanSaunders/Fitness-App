@@ -17,8 +17,8 @@ export default function StatsScreen() {
 
   const save = async () => {
     try {
-      const jsonExerciseValue = JSON.stringify(exerciseContext.counts.exerciseCount)
-      const jsonWorkoutValue = JSON.stringify(exerciseContext.counts.workoutCount)
+      const jsonExerciseValue = exerciseContext.counts.exerciseCount.toString()
+      const jsonWorkoutValue = exerciseContext.counts.workoutCount.toString()
 
       await AsyncStorage.setItem(
         "MyExerciseCount",
@@ -43,8 +43,8 @@ export default function StatsScreen() {
         setExerciseContext((prevState) => ({
           ...prevState,
           counts: {
-            workoutCount: JSON.parse(workoutCount),
-            exerciseCount: JSON.parse(exerciseCount),
+            workoutCount: parseInt(workoutCount),
+            exerciseCount: parseInt(exerciseCount),
           },
         }));
       }
@@ -105,7 +105,7 @@ export default function StatsScreen() {
         />
         <Text style={styles.headerOne}>Exercises Completed:</Text>
         <Text style={styles.exerciseNumber}>
-          {JSON.stringify(exerciseContext.counts.exerciseCount)}
+          {exerciseContext.counts.exerciseCount.toString()}
         </Text>
         <TouchableOpacity style={styles.save} onPress={() => save()}>
           <Text style={{ color: "white", fontWeight: "bold" }}>Save</Text>
@@ -124,7 +124,7 @@ export default function StatsScreen() {
         />
         <Text style={styles.headerOne}>Workouts Completed:</Text>
         <Text style={styles.exerciseNumber}>
-          {JSON.stringify(exerciseContext.counts.workoutCount)}
+          {exerciseContext.counts.workoutCount.toString()}
         </Text>
         <TouchableOpacity style={styles.remove} onPress={() => removeWorkout()}>
           <Text style={{ color: "white", fontWeight: "bold" }}>Restart</Text>
