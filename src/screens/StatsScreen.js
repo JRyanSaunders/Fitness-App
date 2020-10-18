@@ -4,26 +4,21 @@ import {
   Text,
   View,
   Image,
-  AsyncStorage,
   TouchableOpacity,
 } from "react-native";
 import { ExerciseContext } from "../components/ExerciseContext";
 
+import AsyncStorage from '@react-native-community/async-storage';
 import { AntDesign } from "@expo/vector-icons";
 import { Colors } from "../colors/Colors";
-// import * as FileSystem from 'expo-file-system';
 
 export default function StatsScreen() {
   const [exerciseContext, setExerciseContext] = useContext(ExerciseContext);
-
-  console.log(module)
 
   const load = async () => {
     try {
       let exerciseCount = await AsyncStorage.getItem("MyExerciseCount");
       let workoutCount = await AsyncStorage.getItem("MyWorkoutCount");
-      // let tmp = await FileSystem.getInfoAsync('file://StatsScreen.js');
-      // console.log(tmp);
 
       if (exerciseCount !== null && workoutCount !== null) {
         setExerciseContext((prevState) => ({
