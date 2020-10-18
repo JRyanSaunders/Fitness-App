@@ -36,14 +36,17 @@ export default function StatsScreen() {
 
   const save = async () => {
     try {
+      const jsonExerciseValue = JSON.stringify(exerciseContext.counts.exerciseCount)
+      const jsonWorkoutValue = JSON.stringify(exerciseContext.counts.workoutCount)
+
       await AsyncStorage.setItem(
         "MyExerciseCount",
-        exerciseContext.counts.exerciseCount.toString()
+        jsonExerciseValue
       );
       console.log(exerciseContext.counts.exerciseCount);
       await AsyncStorage.setItem(
         "MyWorkoutCount",
-        exerciseContext.counts.workoutCount.toString()
+        jsonWorkoutValue
       );
     } catch (err) {
       alert(err);
