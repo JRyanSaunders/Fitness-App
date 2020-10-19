@@ -1,16 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { StyleSheet, View, Switch, Linking } from "react-native";
 import { Text, Button } from "react-native-elements";
+import { ExerciseContext } from "../components/ExerciseContext";
 
 import { Colors } from "../colors/Colors";
 import { Permissions, Notifications } from "expo";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import AsyncStorage from '@react-native-community/async-storage';
 
 export default function SettingsScreen({ navigation }) {
   const [isNotifEnabled, setIsNotifEnabled] = useState(true);
+  const [exerciseContext, setExerciseContext] = useContext(ExerciseContext);
 
-  const toggleNotifSwitch = () =>
-    setIsNotifEnabled((previousState) => !previousState);
+  // const toggleNotifSwitch = () =>
+  //   setIsNotifEnabled((previousState) => !previousState);
+
+  const removeDates = async () => {
+    try {
+      await AsyncStorage.removeItem("MyCompletedDates");
+    } catch (err) {
+      alert(err);
+    } finally {
+      setExerciseContext((prevState) => ({
+        ...prevState,
+        completedDates: {},
+      }));
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -21,10 +37,13 @@ export default function SettingsScreen({ navigation }) {
       <View style={styles.middle}>
         <Text style={styles.settingsTitle}>Settings Screen</Text>
         <Text style={styles.lockDesc}>
-          This application is still in early development, let us know what you
-          would like to see on this app!
+          "Your PERSONAL TRAINER that helps you workout any-time, anywhere with a full list of full body stretch and roll exercises. Look and feel your best, improve flexibility and accomplish your body goals from just as 10 minutes a day."
         </Text>
-        <Text style={styles.lockDescBold}>Remind me to workout every day</Text>
+        <Text style={styles.lockDesc}> • Track your progress from stats and the calendar</Text>
+        <Text style={styles.lockDesc}> • Pictures and descriptions showing how to do each stretch & roll</Text>
+        <Text style={styles.lockDesc}> • Great for both Men and Women</Text>
+        <Text style={styles.lockDesc}>This application is still in early development, let us know what you would like to see on this app!</Text>
+        {/* <Text style={styles.lockDescBold}>Remind me to workout every day</Text>
         <View style={styles.row}>
           <Text style={{ fontSize: 16, color: Colors.primaryFont }}>
             Show Notifications
@@ -37,7 +56,10 @@ export default function SettingsScreen({ navigation }) {
             value={isNotifEnabled}
             style={{ marginLeft: 16 }}
           />
-        </View>
+        </View> */}
+        <TouchableOpacity style={styles.remove} onPress={() => removeDates()}>
+          <Text style={{ color: "white", fontWeight: "bold" }}>Reset Calendar Dates</Text>
+        </TouchableOpacity>
         <View style={styles.divider}></View>
         <TouchableOpacity
           style={{
@@ -168,13 +190,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     justifyContent: "center",
     alignItems: "center",
-    top: "8%",
-    left: "25%",
-    position: "absolute",
+    bottom: "5%",
     color: "#2D3057",
   },
   lockDesc: {
-    padding: 0,
     fontSize: 9,
     width: "100%",
     paddingHorizontal: 5,
@@ -182,6 +201,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     zIndex: 0,
     color: Colors.primaryFont,
+    marginBottom: 3,
   },
   lockDescBold: {
     fontSize: 12,
@@ -219,5 +239,17 @@ const styles = StyleSheet.create({
     borderColor: Colors.greyLight,
     width: "90%",
     marginVertical: 10,
+  },
+  remove: {
+    width: "70%",
+    padding: 8,
+    alignItems: "center",
+    justifyContent: "center",
+    bottom: 0,
+    left: 0,
+    backgroundColor: "#fc6781",
+    borderRadius: 10,
+    marginTop: 15,
+    marginBottom: 5,
   },
 });

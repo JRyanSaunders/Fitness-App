@@ -21,50 +21,6 @@ import { Calendar } from "react-native-calendars";
 export default function CalendarScreen() {
   const [exerciseContext, setExerciseContext] = useContext(ExerciseContext);
 
-  // const save = async () => {
-  //   try {
-  //     await AsyncStorage.setItem(
-  //       "MyCompletedDates",
-  //       exerciseContext.completedDates.toString()
-  //     );
-  //     console.log(exerciseContext.completedDates);
-  //   } catch (err) {
-  //     alert(err);
-  //   }
-  // };
-
-  // const load = async () => {
-  //   try {
-  //     let completedDates = await AsyncStorage.getItem("MyCompletedDates");
-
-  //     if (completedDates !== null) {
-  //       setExerciseContext((prevState) => ({
-  //         ...prevState,
-  //         completedDates: JSON.parse(completedDates)
-  //       }));
-  //     }
-  //   } catch (err) {
-  //     alert(err);
-  //   }
-  // };
-
-  // const remove = async () => {
-  //   try {
-  //     await AsyncStorage.removeItem("MyCompletedDates");
-  //   } catch (err) {
-  //     alert(err);
-  //   } finally {
-  //     setExerciseContext((prevState) => ({
-  //       ...prevState,
-  //       completedDates: {},
-  //     }));
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   load()
-  // }, []);
-
   return (
     <View style={styles.container}>
       <Text style={styles.pageRef}>CALENDAR</Text>

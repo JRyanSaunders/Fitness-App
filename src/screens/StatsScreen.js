@@ -15,44 +15,6 @@ import { Colors } from "../colors/Colors";
 export default function StatsScreen() {
   const [exerciseContext, setExerciseContext] = useContext(ExerciseContext);
 
-  const save = async () => {
-    try {
-      const jsonExerciseValue = exerciseContext.counts.exerciseCount.toString()
-      const jsonWorkoutValue = exerciseContext.counts.workoutCount.toString()
-
-      await AsyncStorage.setItem(
-        "MyExerciseCount",
-        jsonExerciseValue
-      );
-      console.log(exerciseContext.counts.exerciseCount);
-      await AsyncStorage.setItem(
-        "MyWorkoutCount",
-        jsonWorkoutValue
-      );
-    } catch (err) {
-      alert(err);
-    }
-  };
-
-  const load = async () => {
-    try {
-      let exerciseCount = await AsyncStorage.getItem("MyExerciseCount");
-      let workoutCount = await AsyncStorage.getItem("MyWorkoutCount");
-
-      if (exerciseCount !== null && workoutCount !== null) {
-        setExerciseContext((prevState) => ({
-          ...prevState,
-          counts: {
-            workoutCount: parseInt(workoutCount),
-            exerciseCount: parseInt(exerciseCount),
-          },
-        }));
-      }
-    } catch (err) {
-      alert(err);
-    }
-  };
-
   const removeExercise = async () => {
     try {
       await AsyncStorage.removeItem("MyExerciseCount");
@@ -85,10 +47,6 @@ export default function StatsScreen() {
     }
   };
 
-  useEffect(() => {
-    load()
-  }, []);
-
   return (
     <View style={styles.container}>
       <Image
@@ -107,9 +65,6 @@ export default function StatsScreen() {
         <Text style={styles.exerciseNumber}>
           {exerciseContext.counts.exerciseCount.toString()}
         </Text>
-        <TouchableOpacity style={styles.save} onPress={() => save()}>
-          <Text style={{ color: "white", fontWeight: "bold" }}>Save</Text>
-        </TouchableOpacity>
         <TouchableOpacity style={styles.remove} onPress={() => removeExercise()}>
           <Text style={{ color: "white", fontWeight: "bold" }}>Restart</Text>
         </TouchableOpacity>
@@ -176,18 +131,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     bottom: 0,
     left: 0,
-    backgroundColor: "#fc6781",
-    borderRadius: 10,
-    marginLeft: "10%",
-    marginTop: 5,
-  },
-  save: {
-    width: "15%",
-    position: "absolute",
-    padding: 5,
-    alignItems: "center",
-    bottom: 14,
-    left: 110,
     backgroundColor: "#fc6781",
     borderRadius: 10,
     marginLeft: "10%",

@@ -70,13 +70,6 @@ export default function WorkoutTimer() {
     if (count >= 21) {
       setExerciseContext((prevState) => ({
         ...prevState,
-        counts: {
-          workoutCount: prevState.counts.workoutCount + 1,
-          exerciseCount: prevState.counts.exerciseCount,
-        },
-      }));
-      setExerciseContext((prevState) => ({
-        ...prevState,
         completedDates: {
           ...prevState.completedDates,
           ...date,
@@ -88,7 +81,7 @@ export default function WorkoutTimer() {
       <View style={styles.timerCont}>
         <CountdownCircleTimer
           isPlaying={isPlaying}
-          duration={2}
+          duration={30}
           size={240}
           colors={Colors.primary}
           key={key}
