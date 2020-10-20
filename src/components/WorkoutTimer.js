@@ -3,11 +3,11 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
   Animated,
   Image,
   Alert,
 } from "react-native";
+import { TouchableOpacity} from 'react-native-gesture-handler'
 
 import { CountdownCircleTimer } from "react-native-countdown-circle-timer";
 import { AntDesign } from "@expo/vector-icons";
