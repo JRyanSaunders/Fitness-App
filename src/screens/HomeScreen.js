@@ -41,14 +41,14 @@ const styles = StyleSheet.create({
   },
   pageRef: {
     position: "absolute",
-    top: 20,
-    left: 15,
+    top: "5%",
+    left: "7%",
     color: "grey",
     fontSize: 10,
   },
   heading: {
     position: "absolute",
-    top: 80,
+    top: "15%",
     fontFamily: "lato-regular",
     fontSize: 24,
     color: Colors.primary,
@@ -65,13 +65,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     alignItems: "center",
     flexDirection: "row",
-    width: 200,
-    height: 50,
+    width: "50%",
+    height: "27%",
     backgroundColor: "white",
     borderWidth: 1,
     borderColor: "#eeeeee",
     marginHorizontal: 5,
     marginVertical: 5,
+
 
     // add shadows for iOS only
     shadowOffset: { width: 0.5, height: 0.5 },
@@ -93,6 +94,7 @@ const styles = StyleSheet.create({
     borderColor: "#eeeeee",
     marginHorizontal: 5,
     marginVertical: 60,
+    marginTop: "60%",
 
     // add shadows for iOS only
     shadowOffset: { width: 0.5, height: 0.5 },

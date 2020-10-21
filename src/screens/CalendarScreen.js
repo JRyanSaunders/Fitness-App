@@ -76,14 +76,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
+    justifyContent: "center",
   },
   pageRef: {
     position: "absolute",
-    top: 20,
-    left: 15,
+    top: "5%",
+    left: "7%",
     color: "grey",
     fontSize: 10,
-    zIndex: 4,
   },
   filler: {
     marginTop: "15%",

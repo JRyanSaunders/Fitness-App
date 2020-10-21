@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, SafeAreaView } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -157,19 +157,16 @@ const TopTab = createMaterialTopTabNavigator();
 
 function MyTopTabs() {
   return (
+    <SafeAreaView style={{flex: 1, backgroundColor: "white"}}>
     <TopTab.Navigator>
       <TopTab.Screen name="Foam Roller" component={ExercisesScreen_FR} />
       <TopTab.Screen name="Stretches" component={ExercisesScreen_S} />
     </TopTab.Navigator>
+    </SafeAreaView>
   );
 }
 
 export default function App() {
-  const [exerciseCount, setExerciseCount] = useState(0);
-  // const providerValue = useMemo(() => ({ exerciseCount, setExerciseCount }), [
-  //   exerciseCount,
-  //   setExerciseCount,
-  // ]);
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   if (fontsLoaded) {

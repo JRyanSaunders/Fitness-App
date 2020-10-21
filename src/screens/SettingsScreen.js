@@ -110,12 +110,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   pageRef: {
+    zIndex: 4,
     position: "absolute",
-    top: 20,
-    left: 15,
+    top: "5%",
+    left: "7%",
     color: "#ffffff",
     fontSize: 10,
-    zIndex: 4,
   },
   row: {
     flexDirection: "row",
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     paddingLeft: 26.3,
     paddingRight: 26.3,
     borderRadius: 10,
-    top: 175,
+    top: "30%",
     alignItems: "center",
   },
   title: {
@@ -181,9 +181,8 @@ const styles = StyleSheet.create({
     color: "white",
     justifyContent: "center",
     alignItems: "center",
-    top: 0,
+    top: "20%",
     left: 80,
-    marginTop: 45,
   },
   settingsTitle: {
     fontSize: 24,
@@ -227,6 +226,7 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingHorizontal: 5,
     color: Colors.primaryFont,
+    position: "relative"
   },
   ratingStyle: {
     color: Colors.primary,
