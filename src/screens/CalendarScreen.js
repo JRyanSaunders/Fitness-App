@@ -25,8 +25,6 @@ export default function CalendarScreen() {
     <View style={styles.container}>
       <Text style={styles.pageRef}>CALENDAR</Text>
       <View style={styles.filler}></View>
-      {/* <Button title="save" onPress={save} style={{justifyContent: "center", alignItems: "center"}} />
-      <Button title="remove" onPress={remove} style={{justifyContent: "center", alignItems: "center"}} /> */}
       <Calendar
         markedDates={exerciseContext.completedDates}
         markingType={"multi-dot"}
@@ -58,7 +56,7 @@ export default function CalendarScreen() {
       />
       <Image
         source={require("../../assets/calendar.png")}
-        style={{ width: "100%", height: 200, marginBottom: 5 }}
+        style={{ width: "100%", height: "20%", marginBottom: 5, marginTop: "10%" }}
         resizeMode="contain"
       />
       <Text style={styles.calendarSummary}>

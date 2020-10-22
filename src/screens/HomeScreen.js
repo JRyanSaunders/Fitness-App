@@ -66,13 +66,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     width: "50%",
-    height: "27%",
+    height: "26%",
     backgroundColor: "white",
     borderWidth: 1,
     borderColor: "#eeeeee",
     marginHorizontal: 5,
     marginVertical: 5,
-
 
     // add shadows for iOS only
     shadowOffset: { width: 0.5, height: 0.5 },
@@ -108,4 +107,4 @@ const styles = StyleSheet.create({
   content: {
     alignItems: "center",
   },
-});
+})

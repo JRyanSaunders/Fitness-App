@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "Fitness-App",
+    "name": "Flexeee",
     "slug": "Fitness-App",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -17,10 +17,16 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "uk.co.flexeee",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
+    "android": {
+      "package": "uk.co.flexeee",
+      "versionCode": 1
+    },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logo.png"
     }
   }
 }

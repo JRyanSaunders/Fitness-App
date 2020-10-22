@@ -11,7 +11,7 @@ export default function PrivacyPolicyScreen() {
           Privacy Policy Effective Date: 5/1/2020
         </Text>
         <Text style={styles.paragraph}>
-          Welcome to Flex. Our Privacy Policy explains how we collect, use,
+          Welcome to Flexeee. Our Privacy Policy explains how we collect, use,
           share, and store your information and the control that you have over
           it. Feel free to contact us at jryansaunders@gmail.com if you have any
           questions.
@@ -40,12 +40,12 @@ export default function PrivacyPolicyScreen() {
         </Text>
         <Text style={styles.title}>HOW WE SHARE INFORMATION</Text>
         <Text style={styles.paragraph}>
-          Flex may share your information in the following ways: ​ With third
+          Flexeee may share your information in the following ways: ​ With third
           parties. We may share information with third parties for legal
           reasons, as part of a merger or acquisition, and with service
           providers, sellers, and partners. We will transmit such information
           only to entities that comply with appropriate policy and applicable
-          law. Flex may store the information that is collected through our
+          law. Flexeee may store the information that is collected through our
           services and retain as long as necessary.
         </Text>
         <Text style={styles.title}>OTHER WEBSITES AND SERVICES</Text>

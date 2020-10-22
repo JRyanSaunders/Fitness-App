@@ -11,13 +11,13 @@ export default function TermsOfUseScreen() {
         <Text style={styles.paragraph}>Effective Date: 5/1/2020 </Text>
         <Text style={styles.paragraph}>Welcome! </Text>
         <Text style={styles.paragraph}>
-          Thanks for using Flex. We’ve put together the following Terms of Use
+          Thanks for using Flexee. We’ve put together the following Terms of Use
           so you know the rules that govern our relationship with you. These
-          terms form a legally binding contract between you and Flex so please
+          terms form a legally binding contract between you and Flexee so please
           read them carefully.
         </Text>
         <Text style={styles.paragraph}>
-          ​ By accessing and using the mobile application services that Flex
+          ​ By accessing and using the mobile application services that Flexee
           provides (the “Services”), you agree to the Terms of Use (“Terms”). If
           you do not accept and agree to be bound by all of the terms of this
           Agreement, please do not use the Service. If you have any questions,
@@ -26,7 +26,7 @@ export default function TermsOfUseScreen() {
         <Text style={styles.paragraph}>
           ARBITRATION NOTICE: EXCEPT IF YOU OPT-OUT AND EXCEPT FOR CERTAIN TYPES
           OF DISPUTES DESCRIBED IN THE ARBITRATION SECTION BELOW, YOU AGREE THAT
-          DISPUTES BETWEEN YOU AND Flex WILL BE RESOLVED BY BINDING, INDIVIDUAL
+          DISPUTES BETWEEN YOU AND FLEXEE WILL BE RESOLVED BY BINDING, INDIVIDUAL
           ARBITRATION AND YOU WAIVE YOUR RIGHT TO PARTICIPATE IN A CLASS ACTION
           LAWSUIT OR CLASS-WIDE ARBITRATION.
         </Text>
@@ -165,20 +165,20 @@ export default function TermsOfUseScreen() {
         </Text>
         <Text style={styles.title}>Payments </Text>
         <Text style={styles.paragraph}>
-          Flex may offer the opportunity to purchase access to the Service by
+         Flexee may offer the opportunity to purchase access to the Service by
           means of one-time or recurring payments (“Subscription”) through an
           authorized Marketplace Provider. These payments require you to have an
           active account with a Marketplace Provider and provide a then-current
           and valid method of payment, such as a credit card or debit card (a
           "Payment Method"). Payments will be processed by your respective
-          Marketplace Provider and not through Flex. Any inquiries related to
+          Marketplace Provider and not through Flexee. Any inquiries related to
           payments should be directed to your Marketplace Provider. You are
           responsible for all charges incurred in connection with your payments.
         </Text>
         <Text style={styles.title}>Stop Using Service </Text>
         <Text style={styles.paragraph}>
           Please uninstall the app if you would like to stop using the service.
-          Flex is also free to terminate (or suspend access to) your use of the
+         Flexee is also free to terminate (or suspend access to) your use of the
           Services or your account, for any reason in our discretion, including
           your breach of these Terms. Company has the sole right to decide
           whether you are in violation of any of the restrictions set forth in
@@ -193,34 +193,34 @@ export default function TermsOfUseScreen() {
         </Text>
         <Text style={styles.title}>Disclaimer of Warranties </Text>
         <Text style={styles.paragraph}>
-          ​​ THE SERVICE, INCLUDING, WITHOUT LIMITATION, Flex CONTENT, IS
+          ​​ THE SERVICE, INCLUDING, WITHOUT LIMITATION, FLEXEEE CONTENT, IS
           PROVIDED ON AN "AS IS", "AS AVAILABLE" AND "WITH ALL FAULTS" BASIS. TO
-          THE FULLEST EXTENT PERMISSIBLE BY LAW, NEITHER Flex NOR ANY OF THEIR
-          EMPLOYEES, MANAGERS, OFFICERS OR AGENTS (COLLECTIVELY, THE "Flex
+          THE FULLEST EXTENT PERMISSIBLE BY LAW, NEITHER FLEXEEE NOR ANY OF THEIR
+          EMPLOYEES, MANAGERS, OFFICERS OR AGENTS (COLLECTIVELY, THE  FLEXEEE
           PARTIES") MAKE ANY REPRESENTATIONS OR WARRANTIES OR ENDORSEMENTS OF
           ANY KIND WHATSOEVER, EXPRESS OR IMPLIED, AS TO: (A) THE SERVICE; (B)
-          THE Flex CONTENT; (C) THE USER CONTENT; OR (D) SECURITY ASSOCIATED
-          WITH THE TRANSMISSION OF INFORMATION TO Flex OR VIA THE SERVICE. IN
-          ADDITION, THE Flex PARTIES HEREBY DISCLAIM ALL WARRANTIES, EXPRESS OR
+          THE FLEXEEE CONTENT; (C) THE USER CONTENT; OR (D) SECURITY ASSOCIATED
+          WITH THE TRANSMISSION OF INFORMATION TO FLEXEEE OR VIA THE SERVICE. IN
+          ADDITION, THE FLEXEEE PARTIES HEREBY DISCLAIM ALL WARRANTIES, EXPRESS OR
           IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF
           MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT,
           TITLE, CUSTOM, TRADE, QUIET ENJOYMENT, SYSTEM INTEGRATION AND FREEDOM
-          FROM COMPUTER VIRUS. THE Flex PARTIES DO NOT REPRESENT OR WARRANT THAT
+          FROM COMPUTER VIRUS. THE FLEXEEE PARTIES DO NOT REPRESENT OR WARRANT THAT
           THE SERVICE WILL BE ERROR-FREE OR UNINTERRUPTED; THAT DEFECTS WILL BE
           CORRECTED; OR THAT THE SERVICE OR THE SERVER THAT MAKES THE SERVICE
           AVAILABLE IS FREE FROM ANY HARMFUL COMPONENTS, INCLUDING, WITHOUT
-          LIMITATION, VIRUSES. THE Flex PARTIES DO NOT MAKE ANY REPRESENTATIONS
+          LIMITATION, VIRUSES. THE FLEXEEE PARTIES DO NOT MAKE ANY REPRESENTATIONS
           OR WARRANTIES THAT THE INFORMATION (INCLUDING ANY INSTRUCTIONS) ON THE
           SERVICE IS ACCURATE, COMPLETE, OR USEFUL. YOU ACKNOWLEDGE THAT YOUR
-          USE OF THE SERVICE IS AT YOUR SOLE RISK. THE Flex PARTIES DO NOT
+          USE OF THE SERVICE IS AT YOUR SOLE RISK. THE FLEXEEE PARTIES DO NOT
           WARRANT THAT YOUR USE OF THE SERVICE IS LAWFUL IN ANY PARTICULAR
-          JURISDICTION, AND THE Flex PARTIES SPECIFICALLY DISCLAIM SUCH
+          JURISDICTION, AND THE FLEXEEE PARTIES SPECIFICALLY DISCLAIM SUCH
           WARRANTIES. SOME JURISDICTIONS LIMIT OR DO NOT ALLOW THE DISCLAIMER OF
           IMPLIED OR OTHER WARRANTIES SO THE ABOVE DISCLAIMER MAY NOT APPLY TO
           YOU TO THE EXTENT SUCH JURISDICTION'S LAW IS APPLICABLE TO YOU AND
           THESE TERMS OF USE. BY ACCESSING OR USING THE SERVICE YOU REPRESENT
           AND WARRANT THAT YOUR ACTIVITIES ARE LAWFUL IN EVERY JURISDICTION
-          WHERE YOU ACCESS OR USE THE SERVICE. THE Flex PARTIES DO NOT ENDORSE
+          WHERE YOU ACCESS OR USE THE SERVICE. THE FLEXEEE PARTIES DO NOT ENDORSE
           CONTENT AND SPECIFICALLY DISCLAIM ANY RESPONSIBILITY OR LIABILITY TO
           ANY PERSON OR ENTITY FOR ANY LOSS, DAMAGE (WHETHER ACTUAL,
           CONSEQUENTIAL, PUNITIVE OR OTHERWISE), INJURY, CLAIM, LIABILITY OR
@@ -228,14 +228,14 @@ export default function TermsOfUseScreen() {
           CONTENT. Limitation of Liability; Waiver
         </Text>
         <Text style={styles.paragraph}>
-          ​ UNDER NO CIRCUMSTANCES WILL THE Flex PARTIES BE LIABLE TO YOU FOR
+          ​ UNDER NO CIRCUMSTANCES WILL THE FLEXEEE PARTIES BE LIABLE TO YOU FOR
           ANY LOSS OR DAMAGES OF ANY KIND (INCLUDING, WITHOUT LIMITATION, FOR
           ANY DIRECT, INDIRECT, ECONOMIC, EXEMPLARY, SPECIAL, PUNITIVE,
           INCIDENTAL OR CONSEQUENTIAL LOSSES OR DAMAGES) THAT ARE DIRECTLY OR
-          INDIRECTLY RELATED TO: (A) THE SERVICE; (B) THE Flex CONTENT; (C) USER
+          INDIRECTLY RELATED TO: (A) THE SERVICE; (B) THE FLEXEEE CONTENT; (C) USER
           CONTENT; (D) YOUR USE OF, INABILITY TO USE, OR THE PERFORMANCE OF THE
           SERVICE; (E) ANY ACTION TAKEN IN CONNECTION WITH AN INVESTIGATION BY
-          THE Flex PARTIES OR LAW ENFORCEMENT AUTHORITIES REGARDING YOUR OR ANY
+          THE FLEXEEE PARTIES OR LAW ENFORCEMENT AUTHORITIES REGARDING YOUR OR ANY
           OTHER PARTY'S USE OF THE SERVICE; (F) ANY ACTION TAKEN IN CONNECTION
           WITH COPYRIGHT OR OTHER INTELLECTUAL PROPERTY OWNERS; (G) ANY ERRORS
           OR OMISSIONS IN THE SERVICE'S OPERATION; OR (H) ANY DAMAGE TO ANY
@@ -246,27 +246,27 @@ export default function TermsOfUseScreen() {
           FAILURE OR ANY OTHER TECHNICAL OR OTHER MALFUNCTION, INCLUDING,
           WITHOUT LIMITATION, DAMAGES FOR LOST PROFITS, LOSS OF GOODWILL, LOSS
           OF DATA, WORK STOPPAGE, ACCURACY OF RESULTS, OR COMPUTER FAILURE OR
-          MALFUNCTION, EVEN IF FORESEEABLE OR EVEN IF THE Flex PARTIES HAVE BEEN
+          MALFUNCTION, EVEN IF FORESEEABLE OR EVEN IF THE FLEXEEE PARTIES HAVE BEEN
           ADVISED OF OR SHOULD HAVE KNOWN OF THE POSSIBILITY OF SUCH DAMAGES,
           WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE, STRICT LIABILITY OR TORT
           (INCLUDING, WITHOUT LIMITATION, WHETHER CAUSED IN WHOLE OR IN PART BY
           NEGLIGENCE, ACTS OF GOD, TELECOMMUNICATIONS FAILURE, OR THEFT OR
-          DESTRUCTION OF THE SERVICE). IN NO EVENT WILL THE Flex PARTIES BE
+          DESTRUCTION OF THE SERVICE). IN NO EVENT WILL THE FLEXEEE PARTIES BE
           LIABLE TO YOU OR ANYONE ELSE FOR LOSS, DAMAGE OR INJURY, INCLUDING,
           WITHOUT LIMITATION, DEATH OR PERSONAL INJURY. SOME STATES DO NOT ALLOW
           THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO
           THE ABOVE LIMITATION OR EXCLUSION MAY NOT APPLY TO YOU. IN NO EVENT
-          WILL THE Flex PARTIES TOTAL LIABILITY TO YOU FOR ALL DAMAGES, LOSSES
+          WILL THE FLEXEEE PARTIES TOTAL LIABILITY TO YOU FOR ALL DAMAGES, LOSSES
           OR CAUSES OR ACTION EXCEED ONE HUNDRED UNITED STATES DOLLARS
           ($100.00). YOU AGREE THAT IN THE EVENT YOU INCUR ANY DAMAGES, LOSSES
-          OR INJURIES THAT ARISE OUT OF Flex'S ACTS OR OMISSIONS, THE DAMAGES,
+          OR INJURIES THAT ARISE OUT OF FLEXEEE'S ACTS OR OMISSIONS, THE DAMAGES,
           IF ANY, CAUSED TO YOU ARE NOT IRREPARABLE OR SUFFICIENT TO ENTITLE YOU
           TO AN INJUNCTION PREVENTING ANY EXPLOITATION OF ANY WEB SITE, SERVICE,
-          PROPERTY, PRODUCT OR OTHER CONTENT OWNED OR CONTROLLED BY THE Flex
+          PROPERTY, PRODUCT OR OTHER CONTENT OWNED OR CONTROLLED BY THE FLEXEEE
           PARTIES, AND YOU WILL HAVE NO RIGHTS TO ENJOIN OR RESTRAIN THE
           DEVELOPMENT, PRODUCTION, DISTRIBUTION, ADVERTISING, EXHIBITION OR
           EXPLOITATION OF ANY WEB SITE, PROPERTY, PRODUCT, SERVICE, OR OTHER
-          CONTENT OWNED OR CONTROLLED BY THE Flex PARTIES. BY ACCESSING THE
+          CONTENT OWNED OR CONTROLLED BY THE FLEXEEE PARTIES. BY ACCESSING THE
           SERVICE, YOU UNDERSTAND THAT YOU MAY BE WAIVING RIGHTS WITH RESPECT TO
           CLAIMS THAT ARE AT THIS TIME UNKNOWN OR UNSUSPECTED, AND IN ACCORDANCE
           WITH SUCH WAIVER, YOU ACKNOWLEDGE THAT YOU HAVE READ AND UNDERSTAND,
@@ -274,7 +274,7 @@ export default function TermsOfUseScreen() {
           PROVIDES AS FOLLOWS: "A GENERAL RELEASE DOES NOT EXTEND TO CLAIMS
           WHICH THE CREDITOR DOES NOT KNOW OR SUSPECT TO EXIST IN HIS FAVOR AT
           THE TIME OF EXECUTING THE RELEASE, WHICH IF KNOWN BY HIM MUST HAVE
-          MATERIALLY AFFECTED HIS SETTLEMENT WITH THE DEBTOR." Flex IS NOT
+          MATERIALLY AFFECTED HIS SETTLEMENT WITH THE DEBTOR." FLEXEEE IS NOT
           RESPONSIBLE FOR THE ACTIONS, CONTENT, INFORMATION, OR DATA OF THIRD
           PARTIES, AND YOU RELEASE US, OUR DIRECTORS, OFFICERS, EMPLOYEES, AND
           AGENTS FROM ANY CLAIMS AND DAMAGES, KNOWN AND UNKNOWN, ARISING OUT OF
@@ -284,8 +284,8 @@ export default function TermsOfUseScreen() {
         <Text style={styles.title}> Indemnification </Text>
         <Text style={styles.paragraph}>
           ​ You (and also any third party for whom you operate an account or
-          activity on the Service) agree to defend (at Flex's request),
-          indemnify and hold the Flex Parties harmless from and against any
+          activity on the Service) agree to defend (at Flexee's request),
+          indemnify and hold the Flexee Parties harmless from and against any
           claims, liabilities, damages, losses, and expenses, including without
           limitation, reasonable attorney's fees and costs, arising out of or in
           any way connected with any of the following (including as a result of
@@ -299,60 +299,60 @@ export default function TermsOfUseScreen() {
           quasi-governmental authorities, including, without limitation, all
           regulatory, administrative and legislative authorities; or (v) any
           misrepresentation made by you. You will cooperate as fully required by
-          Flex in the defense of any claim. Flex reserves the right to assume
+         Flexee in the defense of any claim. Flexee reserves the right to assume
           the exclusive defense and control of any matter subject to
           indemnification by you, and you will not in any event settle any claim
-          without the prior written consent of Flex.
+          without the prior written consent of Flexee.
         </Text>
         <Text style={styles.title}>Arbitration ​</Text>
         <Text style={styles.paragraph}>
-          Except if you opt-out or for disputes relating to: (1) your or Flex's
+          Except if you opt-out or for disputes relating to: (1) your or Flexee's
           intellectual property (such as trademarks, trade dress, domain names,
           trade secrets, copyrights and patents); or (2) violations of
           provisions 13 or 14 of the Basic Terms, above ("Excluded Disputes"),
-          you agree that all disputes between you and Flex (whether or not such
+          you agree that all disputes between you and Flexee (whether or not such
           dispute involves a third party) with regard to your relationship with
-          Flex, including without limitation disputes related to these Terms of
+         Flexee, including without limitation disputes related to these Terms of
           Use, your use of the Service, and/or rights of privacy and/or
           publicity, will be resolved by binding, individual arbitration under
           the American Arbitration Association's rules for arbitration of
-          consumer-related disputes and you and Flex hereby expressly waive
+          consumer-related disputes and you and Flexee hereby expressly waive
           trial by jury. As an alternative, you may bring your claim in your
           local "small claims" court, if permitted by that small claims court's
           rules. You may bring claims only on your own behalf. Neither you nor
-          Flex will participate in a class action or class-wide arbitration for
+         Flexee will participate in a class action or class-wide arbitration for
           any claims covered by this agreement. You also agree not to
           participate in claims brought in a private attorney general or
           representative capacity, or consolidated claims involving another
-          person's account, if Flex is a party to the proceeding. This dispute
+          person's account, if Flexee is a party to the proceeding. This dispute
           resolution provision will be governed by the Federal Arbitration Act.
           In the event the American Arbitration Association is unwilling or
           unable to set a hearing date within one hundred and sixty (160) days
-          of filing the case, then either Flex or you can elect to have the
+          of filing the case, then either Flexee or you can elect to have the
           arbitration administered instead by the Judicial Arbitration and
           Mediation Services. Judgment on the award rendered by the arbitrator
           may be entered in any court having competent jurisdiction. Any
           provision of applicable law notwithstanding, the arbitrator will not
           have authority to award damages, remedies or awards that conflict with
           these Terms of Use. You may opt out of this agreement to arbitrate. If
-          you do so, neither you nor Flex can require the other to participate
-          in an arbitration proceeding. To opt out, you must notify Flex in
+          you do so, neither you nor Flexee can require the other to participate
+          in an arbitration proceeding. To opt out, you must notify Flexee in
           writing within 30 days of the date that you first became subject to
           this arbitration provision. You must use this address to opt out:
           Bowery Digital LLC. ATTN: 1487 Dunwoody Drive, Suite One, West
           Chester, PA 19380 You must include your name and residence address,
-          the email address you use for your Flex account, and a clear statement
+          the email address you use for your Flexee account, and a clear statement
           that you want to opt out of this arbitration agreement. If the
           prohibition against class actions and other claims brought on behalf
           of third parties contained above is found to be unenforceable, then
           all of the preceding language in this Arbitration section will be null
           and void. This arbitration agreement will survive the termination of
-          your relationship with Flex.
+          your relationship with Flexee.
         </Text>
         <Text style={styles.title}>Time Limitation on Claims </Text>
         <Text style={styles.paragraph}>
           You agree that any claim you may have arising out of or related to
-          your relationship with Flex must be filed within one year after such
+          your relationship with Flexee must be filed within one year after such
           claim arose; otherwise, your claim is permanently barred. Governing
           Law & Venue.
         </Text>
@@ -364,7 +364,7 @@ export default function TermsOfUseScreen() {
           SALE OF GOODS, IF OTHERWISE APPLICABLE. For any action at law or in
           equity relating to the arbitration provision of these Terms of Use,
           the Excluded Disputes or if you opt out of the agreement to arbitrate,
-          you agree to resolve any dispute you have with Flex exclusively in a
+          you agree to resolve any dispute you have with Flexee exclusively in a
           state or federal court located in Chester County, Pennsylvania, and to
           submit to the personal jurisdiction of the courts located in Chester
           County, Pennsylvania for the purpose of litigating all such disputes.
@@ -372,25 +372,25 @@ export default function TermsOfUseScreen() {
           or for any reason unenforceable during arbitration or by a court of
           competent jurisdiction, then that provision will be deemed severable
           from these Terms of Use and will not affect the validity and
-          enforceability of any remaining provisions. Flex's failure to insist
+          enforceability of any remaining provisions. Flexee's failure to insist
           upon or enforce strict performance of any provision of these Terms
           will not be construed as a waiver of any provision or right. No waiver
           of any of these Terms will be deemed a further or continuing waiver of
-          such term or condition or any other term or condition. Flex reserves
+          such term or condition or any other term or condition. Flexee reserves
           the right to change this dispute resolution provision, but any such
           changes will not apply to disputes arising before the effective date
           of the amendment. This dispute resolution provision will survive the
-          termination of any or all of your transactions with Flex. Entire
+          termination of any or all of your transactions with Flexee. Entire
           Agreement ​ If you are using the Service on behalf of a legal entity,
           you represent that you are authorized to enter into an agreement on
           behalf of that legal entity. These Terms of Use constitute the entire
-          agreement between you and Flex and governs your use of the Service,
-          superseding any prior agreements between you and Flex. You will not
+          agreement between you and Flexee and governs your use of the Service,
+          superseding any prior agreements between you and Flexee. You will not
           assign the Terms of Use or assign any rights or delegate any
           obligations hereunder, in whole or in part, whether voluntarily or by
-          operation of law, without the prior written consent of Flex. Any
+          operation of law, without the prior written consent of Flexee. Any
           purported assignment or delegation by you without the appropriate
-          prior written consent of Flex will be null and void. Flex may assign
+          prior written consent of Flexee will be null and void. Flexee may assign
           these Terms of Use or any rights hereunder without your consent. If
           any provision of these Terms of Use is found by a court of competent
           jurisdiction to be invalid or otherwise unenforceable, the parties
@@ -403,13 +403,13 @@ export default function TermsOfUseScreen() {
           rights. Territorial Restrictions ​ The information provided within the
           Service is not intended for distribution to or use by any person or
           entity in any jurisdiction or country where such distribution or use
-          would be contrary to law or regulation or which would subject Flex to
+          would be contrary to law or regulation or which would subject Flexee to
           any registration requirement within such jurisdiction or country. We
           reserve the right to limit the availability of the Service or any
           portion of the Service, to any person, geographic area, or
           jurisdiction, at any time and in our sole discretion, and to limit the
           quantities of any content, program, product, service or other feature
-          that Flex provides. Software related to or made available by the
+          that Flexee provides. Software related to or made available by the
           Service may be subject to United States export controls. Thus, no
           software from the Service may be downloaded, exported or re-exported:
           (a) into (or to a national or resident of) any country to which the

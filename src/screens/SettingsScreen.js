@@ -36,6 +36,7 @@ export default function SettingsScreen({ navigation }) {
       </View>
       <View style={styles.middle}>
         <Text style={styles.settingsTitle}>Settings Screen</Text>
+        <View style={{marginTop: "15%", width: "100%"}}>
         <Text style={styles.lockDesc}>
           "Your PERSONAL TRAINER that helps you workout any-time, anywhere with a full list of full body stretch and roll exercises. Look and feel your best, improve flexibility and accomplish your body goals from just as 10 minutes a day."
         </Text>
@@ -43,6 +44,7 @@ export default function SettingsScreen({ navigation }) {
         <Text style={styles.lockDesc}> • Pictures and descriptions showing how to do each stretch & roll</Text>
         <Text style={styles.lockDesc}> • Great for both Men and Women</Text>
         <Text style={styles.lockDesc}>This application is still in early development, let us know what you would like to see on this app!</Text>
+        </View>
         {/* <Text style={styles.lockDescBold}>Remind me to workout every day</Text>
         <View style={styles.row}>
           <Text style={{ fontSize: 16, color: Colors.primaryFont }}>
@@ -88,15 +90,15 @@ export default function SettingsScreen({ navigation }) {
         </TouchableOpacity>
       </View>
       <View style={styles.ratingSection}>
-        <Text style={styles.rateDesc}>
-          Enjoying the app? Got a suggestion?{" "}
+        {/* <Text style={styles.rateDesc}>
+          Enjoying the app? Got a suggestion?
           <Text
             style={styles.ratingStyle}
             onPress={() => Linking.openURL("https://www.jack-saunders.com")}
           >
             Contact me.
           </Text>
-        </Text>
+        </Text> */}
       </View>
     </View>
   );
@@ -157,6 +159,7 @@ const styles = StyleSheet.create({
     flex: 1,
     position: "absolute",
     justifyContent: "center",
+    alignItems: "center",
     zIndex: 1,
     backgroundColor: "#5257F2",
     top: 0,
@@ -166,11 +169,9 @@ const styles = StyleSheet.create({
     height: "60%",
     flex: 1,
     position: "absolute",
-    justifyContent: "center",
     zIndex: 2,
     backgroundColor: "#ffffff",
-    paddingLeft: 26.3,
-    paddingRight: 26.3,
+    paddingHorizontal: 26.3,
     borderRadius: 10,
     top: "30%",
     alignItems: "center",
@@ -182,14 +183,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     top: "20%",
-    left: 80,
   },
   settingsTitle: {
     fontSize: 24,
     fontWeight: "bold",
     justifyContent: "center",
     alignItems: "center",
-    bottom: "5%",
+    top: "5%",
     color: "#2D3057",
   },
   lockDesc: {
@@ -203,15 +203,14 @@ const styles = StyleSheet.create({
     marginBottom: 3,
   },
   lockDescBold: {
-    fontSize: 12,
+    fontSize: 10,
     width: "100%",
     paddingHorizontal: 5,
     justifyContent: "center",
     alignItems: "center",
     zIndex: 0,
     color: Colors.primaryFont,
-    fontWeight: "500",
-    marginTop: 10,
+    marginBottom: 3,
   },
   ratingSection: {
     alignItems: "center",

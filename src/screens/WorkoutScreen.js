@@ -7,6 +7,7 @@ import WorkoutTimer from "../components/WorkoutTimer";
 export default function WorkoutScreen() {
   return (
     <View style={styles.container}>
+      <Text style={styles.desc}>Improves your overall flexibility and movement</Text>
       <View style={styles.exerciseType}>
         <Text style={styles.textExercise}>Exercise</Text>
         <Text style={styles.textExerciseType}>Full Body</Text>
@@ -38,4 +39,13 @@ const styles = StyleSheet.create({
     color: Colors.primary,
     fontWeight: "500",
   },
+  desc: {
+    top: 35,
+    left: 30,
+    zIndex: 2,
+    width: "40%",
+    fontSize: 12,
+    color: "grey",
+    position: "absolute"
+  }
 });

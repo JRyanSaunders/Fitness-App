@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   },
   cardWide: {
     borderRadius: 15,
-    height: "15%",
+    height: 90,
     width: "90%",
     paddingTop: 10,
     paddingHorizontal: 10,
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     left: 40,
     color: "white",
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: 20
   },
   exerciseNumber: {
     top: 20,
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   },
   remove: {
     width: "30%",
-    padding: 5,
+    padding: "2%",
     alignItems: "center",
     bottom: 0,
     left: 0,
