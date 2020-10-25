@@ -1,0 +1,6 @@
+module Pods_Flexeee {
+  umbrella header "Pods-Flexeee-umbrella.h"
+
+  export *
+  module * { export * }
+}
