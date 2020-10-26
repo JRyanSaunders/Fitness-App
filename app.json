@@ -19,7 +19,7 @@
     "ios": {
       "bundleIdentifier": "uk.co.flexeee",
       "buildNumber": "1.0.0",
-      "supportsTablet": true
+      "supportsTablet": false
     },
     "android": {
       "package": "uk.co.flexeee",
