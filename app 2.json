@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Flexeee",
-    "slug": "flexeee",
+    "slug": "Fitness-App",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/logo.png",
@@ -19,7 +19,7 @@
     "ios": {
       "bundleIdentifier": "uk.co.flexeee",
       "buildNumber": "1.0.0",
-      "supportsTablet": false
+      "supportsTablet": true
     },
     "android": {
       "package": "uk.co.flexeee",
