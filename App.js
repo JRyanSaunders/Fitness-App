@@ -5,7 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { AppLoading } from "expo";
+import AppLoading from "expo-app-loading";
 
 import { AntDesign } from "@expo/vector-icons";
 import * as Font from "expo-font";
@@ -157,11 +157,11 @@ const TopTab = createMaterialTopTabNavigator();
 
 function MyTopTabs() {
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: "white"}}>
-    <TopTab.Navigator>
-      <TopTab.Screen name="Foam Roller" component={ExercisesScreen_FR} />
-      <TopTab.Screen name="Stretches" component={ExercisesScreen_S} />
-    </TopTab.Navigator>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
+      <TopTab.Navigator>
+        <TopTab.Screen name="Foam Roller" component={ExercisesScreen_FR} />
+        <TopTab.Screen name="Stretches" component={ExercisesScreen_S} />
+      </TopTab.Navigator>
     </SafeAreaView>
   );
 }
@@ -179,7 +179,11 @@ export default function App() {
     );
   } else {
     return (
-      <AppLoading startAsync={getFonts} onFinish={() => setFontsLoaded(true)} />
+      <AppLoading
+        startAsync={getFonts}
+        onFinish={() => setFontsLoaded(true)}
+        onError={console.warn}
+      />
     );
   }
 }
